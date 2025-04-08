@@ -13,17 +13,17 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center relative z-20 text-center">
         <motion.h1 
-          className="text-5xl md:text-7xl font-mono uppercase text-white mb-2 tracking-widest"
+          className="text-5xl md:text-7xl font-heading uppercase text-white mb-2 tracking-wide"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          style={{ letterSpacing: '0.07em', maxWidth: '90%', margin: '0 auto 0.5rem auto' }}
+          style={{ letterSpacing: '0.05em', maxWidth: '90%', margin: '0 auto 0.5rem auto' }}
         >
           Davidson Media Co
         </motion.h1>
         
         <motion.p 
-          className="text-xl md:text-2xl text-white font-light mb-8 font-mono"
+          className="text-xl md:text-2xl text-white font-light mb-8 font-heading"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
