@@ -13,7 +13,7 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center relative z-20 text-center">
         <motion.h1 
-          className="text-5xl md:text-7xl font-bold text-white mb-4"
+          className="text-5xl md:text-7xl font-heading text-white mb-4 tracking-wide"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}

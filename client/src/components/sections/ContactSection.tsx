@@ -65,7 +65,7 @@ const ContactSection = () => {
         >
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="p-8 md:p-12 bg-primary/10 text-white border-r border-gray-800">
-              <h2 className="text-3xl font-bold mb-6 text-primary">Ready to Work Together?</h2>
+              <h2 className="text-3xl font-heading mb-6 text-primary tracking-wide">Ready to Work Together?</h2>
               <p className="mb-8 text-gray-300">No pressure. Just tell me what you need — I'll take it from there.</p>
               
               <div className="space-y-6">
@@ -74,7 +74,7 @@ const ContactSection = () => {
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium">Email</h3>
+                    <h3 className="text-lg font-heading text-white">Email</h3>
                     <p className="text-gray-400">contact@davidsonmedia.co</p>
                   </div>
                 </div>
@@ -84,7 +84,7 @@ const ContactSection = () => {
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium">Phone</h3>
+                    <h3 className="text-lg font-heading text-white">Phone</h3>
                     <p className="text-gray-400">(555) 123-4567</p>
                   </div>
                 </div>
@@ -94,7 +94,7 @@ const ContactSection = () => {
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium">Location</h3>
+                    <h3 className="text-lg font-heading text-white">Location</h3>
                     <p className="text-gray-400">Seattle, WA</p>
                   </div>
                 </div>

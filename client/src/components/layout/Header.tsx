@@ -27,7 +27,7 @@ const Header = () => {
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold tracking-tight text-primary drop-shadow-lg">Davidson Media Co</a>
+        <a href="#" className="text-2xl font-heading font-normal tracking-tight text-primary drop-shadow-lg">Davidson Media Co</a>
         
         {/* Mobile menu button */}
         <button 

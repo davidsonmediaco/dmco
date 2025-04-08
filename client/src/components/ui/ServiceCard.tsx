@@ -34,7 +34,7 @@ const ServiceCard = ({ title, description, icon, isHighlighted, link }: ServiceC
         {icon}
       </div>
 
-      <h3 className="text-xl font-bold mb-3 text-white">{title}</h3>
+      <h3 className="text-xl font-heading mb-3 text-white tracking-wide">{title}</h3>
       <p className="text-gray-400 mb-6">{description}</p>
       
       <a href={link} className="text-primary font-medium hover:underline mt-auto inline-flex items-center">

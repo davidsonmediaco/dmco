@@ -44,7 +44,7 @@ const ServicesSection = () => {
     <section id="services" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <motion.h2 
-          className="text-4xl font-bold text-center mb-4 text-white"
+          className="text-4xl font-heading text-center mb-4 text-white tracking-wide"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
