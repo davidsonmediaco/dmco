@@ -63,7 +63,7 @@ const WebDesignSection = () => {
             <h2 className="text-4xl font-heading mb-6 text-white tracking-wide">Your Brand, Your Site, Done Right.</h2>
             <p className="text-xl text-primary mb-4">Functional. Beautiful. SEO-optimized. Sites that convert.</p>
             <p className="text-gray-400 mb-8">
-              I create custom websites that not only look stunning but also drive real business results. From personal portfolios to full e-commerce platforms, I handle everything from design to deployment.
+              I create custom websites that not only look stunning but also drive real business results. From personal portfolios to small business and e-commerce platforms, I handle everything from design to deployment.
             </p>
             
             <div className="space-y-4 mb-8">
