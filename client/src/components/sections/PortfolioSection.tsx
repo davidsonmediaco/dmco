@@ -22,10 +22,10 @@ const PortfolioSection = () => {
   ];
 
   return (
-    <section id="work" className="py-20 bg-white">
+    <section id="work" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <motion.h2 
-          className="text-4xl font-bold text-center mb-4"
+          className="text-4xl font-bold text-center mb-4 text-white"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -35,7 +35,7 @@ const PortfolioSection = () => {
         </motion.h2>
         
         <motion.p 
-          className="text-center text-gray-600 max-w-2xl mx-auto mb-12"
+          className="text-center text-gray-400 max-w-2xl mx-auto mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,8 +51,8 @@ const PortfolioSection = () => {
               key={category.id}
               className={`px-5 py-2 rounded-full transition-colors ${
                 selectedCategory === category.id 
-                  ? "bg-primary text-white" 
-                  : "bg-gray-200 hover:bg-gray-300"
+                  ? "bg-primary text-black font-bold" 
+                  : "bg-gray-800 text-white hover:bg-gray-700"
               }`}
               onClick={() => setSelectedCategory(category.id)}
             >

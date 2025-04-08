@@ -54,97 +54,97 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-light">
+    <section id="contact" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <motion.div 
-          className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden"
+          className="max-w-3xl mx-auto bg-gray-900 rounded-2xl shadow-lg overflow-hidden border border-gray-800"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="p-8 md:p-12 bg-primary text-white">
-              <h2 className="text-3xl font-bold mb-6">Ready to Work Together?</h2>
-              <p className="mb-8">No pressure. Just tell me what you need — I'll take it from there.</p>
+            <div className="p-8 md:p-12 bg-primary/10 text-white border-r border-gray-800">
+              <h2 className="text-3xl font-bold mb-6 text-primary">Ready to Work Together?</h2>
+              <p className="mb-8 text-gray-300">No pressure. Just tell me what you need — I'll take it from there.</p>
               
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
-                    <Mail className="h-6 w-6" />
+                    <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-medium">Email</h3>
-                    <p>contact@davidsonmedia.co</p>
+                    <p className="text-gray-400">contact@davidsonmedia.co</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
-                    <Phone className="h-6 w-6" />
+                    <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-medium">Phone</h3>
-                    <p>(555) 123-4567</p>
+                    <p className="text-gray-400">(555) 123-4567</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
-                    <MapPin className="h-6 w-6" />
+                    <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-medium">Location</h3>
-                    <p>Seattle, WA</p>
+                    <p className="text-gray-400">Seattle, WA</p>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="p-8 md:p-12">
+            <div className="p-8 md:p-12 bg-gray-900">
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">Name</label>
                   <input 
                     type="text" 
                     id="name"
                     {...register("name")}
-                    className={`w-full px-4 py-3 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors`}
+                    className={`w-full px-4 py-3 border bg-gray-800 text-white ${errors.name ? 'border-red-500' : 'border-gray-700'} rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors`}
                   />
                   {errors.name && (
-                    <div className="text-red-500 text-sm mt-1">{errors.name.message}</div>
+                    <div className="text-red-400 text-sm mt-1">{errors.name.message}</div>
                   )}
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">Email</label>
                   <input 
                     type="email" 
                     id="email"
                     {...register("email")}
-                    className={`w-full px-4 py-3 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors`}
+                    className={`w-full px-4 py-3 border bg-gray-800 text-white ${errors.email ? 'border-red-500' : 'border-gray-700'} rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors`}
                   />
                   {errors.email && (
-                    <div className="text-red-500 text-sm mt-1">{errors.email.message}</div>
+                    <div className="text-red-400 text-sm mt-1">{errors.email.message}</div>
                   )}
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Project Details</label>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">Project Details</label>
                   <textarea 
                     id="message"
                     {...register("message")}
                     rows={4}
-                    className={`w-full px-4 py-3 border ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors resize-none`}
+                    className={`w-full px-4 py-3 border bg-gray-800 text-white ${errors.message ? 'border-red-500' : 'border-gray-700'} rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors resize-none`}
                   ></textarea>
                   {errors.message && (
-                    <div className="text-red-500 text-sm mt-1">{errors.message.message}</div>
+                    <div className="text-red-400 text-sm mt-1">{errors.message.message}</div>
                   )}
                 </div>
                 
                 <button 
                   type="submit" 
-                  className="w-full px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                  className="w-full px-6 py-3 bg-primary text-black rounded-lg font-bold hover:bg-primary/90 transition-colors"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}

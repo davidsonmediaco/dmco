@@ -41,10 +41,10 @@ const ServicesSection = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-light">
+    <section id="services" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <motion.h2 
-          className="text-4xl font-bold text-center mb-4"
+          className="text-4xl font-bold text-center mb-4 text-white"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -54,7 +54,7 @@ const ServicesSection = () => {
         </motion.h2>
         
         <motion.p 
-          className="text-center text-gray-600 max-w-2xl mx-auto mb-16"
+          className="text-center text-gray-400 max-w-2xl mx-auto mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

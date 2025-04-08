@@ -31,7 +31,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="font-inter text-dark bg-light">
+    <div className="font-inter text-white bg-black">
       <Header />
       <main>
         <HeroSection />

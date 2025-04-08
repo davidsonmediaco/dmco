@@ -43,9 +43,9 @@ const WebDesignSection = () => {
   ];
 
   return (
-    <section id="web-design" className="py-20 bg-white relative overflow-hidden">
+    <section id="web-design" className="py-20 bg-black relative overflow-hidden">
       {/* Background decorative element */}
-      <div className="absolute top-0 right-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+      <div className="absolute top-0 right-0 w-full h-full overflow-hidden opacity-5 pointer-events-none">
         <svg viewBox="0 0 323 323" className="w-full h-full text-primary" xmlns="http://www.w3.org/2000/svg">
           <path d="M320.667 253V70c0-37.308-30.692-68-68-68H70c-37.308 0-68 30.692-68 68v183c0 37.308 30.692 68 68 68h182.667c37.308 0 68-30.692 68-68z" fill="currentColor" />
         </svg>
@@ -60,9 +60,9 @@ const WebDesignSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl font-bold mb-6">Your Brand, Your Site, Done Right.</h2>
-            <p className="text-xl text-gray-600 mb-4">Functional. Beautiful. SEO-optimized. Sites that convert.</p>
-            <p className="text-gray-600 mb-8">
+            <h2 className="text-4xl font-bold mb-6 text-white">Your Brand, Your Site, Done Right.</h2>
+            <p className="text-xl text-primary mb-4">Functional. Beautiful. SEO-optimized. Sites that convert.</p>
+            <p className="text-gray-400 mb-8">
               I create custom websites that not only look stunning but also drive real business results. From personal portfolios to full e-commerce platforms, I handle everything from design to deployment.
             </p>
             
@@ -80,15 +80,15 @@ const WebDesignSection = () => {
                     <Check className="h-4 w-4 text-primary" />
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium">{benefit.title}</h3>
-                    <p className="text-gray-600">{benefit.description}</p>
+                    <h3 className="text-lg font-medium text-white">{benefit.title}</h3>
+                    <p className="text-gray-400">{benefit.description}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
             
             <motion.button 
-              className="px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+              className="px-8 py-3 bg-primary text-black rounded-full font-bold hover:bg-primary/90 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
               onClick={scrollToContact}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
