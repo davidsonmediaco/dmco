@@ -22,8 +22,8 @@ const ServicesSection = () => {
     },
     {
       id: 3,
-      title: "Social Media Management",
-      description: "Strategic content creation and account management to grow your brand's presence across all social platforms.",
+      title: "Social Media Strategy & Consulting",
+      description: "Personalized consultation to develop confidence-building strategies that transform social media from intimidating to actionable, with ongoing guidance to bolster your brand's growth.",
       icon: <Users className="h-8 w-8 text-primary" />,
       isHighlighted: false,
       link: "#"
@@ -60,7 +60,7 @@ const ServicesSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          From dynamic content to fully functional websites, I offer creative solutions that bring your brand to life.
+          I offer strategic creative solutions that build confidence and transform your brand vision into actionable results, from compelling visual storytelling to guided social media strategies.
         </motion.p>
         
         <motion.div 
