@@ -30,7 +30,7 @@ const ServiceCard = ({ title, description, icon, isHighlighted, link }: ServiceC
         </div>
       )}
 
-      <div className={`w-16 h-16 ${isHighlighted ? 'bg-primary/30' : 'bg-gray-800'} rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors`}>
+      <div className={`w-16 h-16 ${isHighlighted ? 'bg-primary/20' : 'bg-gray-800'} rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-colors`}>
         {icon}
       </div>
 
