@@ -32,7 +32,7 @@ const HeroSection = () => {
         
         <motion.a 
           href="#work" 
-          className="mt-8 px-8 py-3 bg-white text-dark rounded-full font-medium hover:bg-primary hover:text-white transition-colors duration-300"
+          className="mt-8 px-8 py-3 bg-primary text-black rounded-full font-medium hover:bg-opacity-90 transition-colors duration-300"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.9 }}
