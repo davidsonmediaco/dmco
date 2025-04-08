@@ -27,7 +27,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          style={{ maxWidth: '90%', margin: '0 auto' }}
+          style={{ maxWidth: '90%', margin: '0 auto', letterSpacing: '0.2px' }}
         >
           Turning Moments Into Stories, And Ideas Into Reality
         </motion.p>
