@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div>
             <h3 className="font-bold text-xl mb-4 text-primary">Davidson Media Co</h3>
-            <p className="text-gray-400 mb-4">Visual stories, beautifully built.</p>
+            <p className="text-gray-400 mb-4">Turning Moments Into Stories, And Ideas Into Reality</p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-primary transition-colors" aria-label="Behance">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">

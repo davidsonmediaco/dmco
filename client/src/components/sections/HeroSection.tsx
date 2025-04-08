@@ -27,7 +27,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          Visual stories, beautifully built.
+          Turning Moments Into Stories, And Ideas Into Reality
         </motion.p>
         
         <motion.a 
