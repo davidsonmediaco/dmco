@@ -21,14 +21,18 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed w-full bg-black/90 backdrop-blur-sm z-50 transition-shadow ${isScrolled ? 'shadow-md' : 'shadow-sm'}`}>
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold tracking-tight text-primary">Davidson Media Co</a>
+    <header className={`fixed w-full z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-gradient-to-b from-black/80 to-black/40 backdrop-blur-sm' 
+        : 'bg-transparent'
+    }`}>
+      <div className="container mx-auto px-4 py-6 flex justify-between items-center">
+        <a href="#" className="text-2xl font-bold tracking-tight text-primary drop-shadow-lg">Davidson Media Co</a>
         
         {/* Mobile menu button */}
         <button 
           onClick={toggleMenu}
-          className="lg:hidden text-white focus:outline-none"
+          className="lg:hidden text-white focus:outline-none drop-shadow-md"
           aria-label="Toggle menu"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -38,42 +42,44 @@ const Header = () => {
         
         {/* Desktop navigation */}
         <nav className="hidden lg:flex items-center space-x-8">
-          <a href="#work" className="text-white hover:text-primary transition-colors">Work</a>
-          <a href="#services" className="text-white hover:text-primary transition-colors">Services</a>
-          <a href="#web-design" className="text-white hover:text-primary transition-colors">Web Design</a>
-          <a href="#contact" className="text-white hover:text-primary transition-colors">Contact</a>
+          <a href="#work" className="text-white hover:text-primary transition-colors font-medium drop-shadow-md">Work</a>
+          <a href="#services" className="text-white hover:text-primary transition-colors font-medium drop-shadow-md">Services</a>
+          <a href="#web-design" className="text-white hover:text-primary transition-colors font-medium drop-shadow-md">Web Design</a>
+          <a href="#contact" className="text-white hover:text-primary transition-colors font-medium drop-shadow-md">Contact</a>
         </nav>
       </div>
       
       {/* Mobile navigation */}
       <nav 
-        className={`bg-black lg:hidden ${isMenuOpen ? 'block' : 'hidden'} transition-all duration-300`}
+        className={`bg-gradient-to-b from-black/90 to-black/70 backdrop-blur-md lg:hidden ${
+          isMenuOpen ? 'block' : 'hidden'
+        } transition-all duration-300`}
       >
         <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
           <a 
             href="#work" 
-            className="text-white hover:text-primary transition-colors py-2"
+            className="text-white hover:text-primary transition-colors py-2 font-medium"
             onClick={() => setIsMenuOpen(false)}
           >
             Work
           </a>
           <a 
             href="#services" 
-            className="text-white hover:text-primary transition-colors py-2"
+            className="text-white hover:text-primary transition-colors py-2 font-medium"
             onClick={() => setIsMenuOpen(false)}
           >
             Services
           </a>
           <a 
             href="#web-design" 
-            className="text-white hover:text-primary transition-colors py-2"
+            className="text-white hover:text-primary transition-colors py-2 font-medium"
             onClick={() => setIsMenuOpen(false)}
           >
             Web Design
           </a>
           <a 
             href="#contact" 
-            className="text-white hover:text-primary transition-colors py-2"
+            className="text-white hover:text-primary transition-colors py-2 font-medium"
             onClick={() => setIsMenuOpen(false)}
           >
             Contact

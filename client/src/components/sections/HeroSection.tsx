@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 const HeroSection = () => {
   return (
     <section className="hero relative h-screen overflow-hidden">
-      <div className="absolute inset-0 w-full h-full bg-dark/20 z-10"></div>
+      <div className="absolute inset-0 w-full h-full bg-black/10 z-10"></div>
       <img 
         src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071&auto=format&fit=crop" 
         alt="Creative photography by Davidson Media Co" 
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
-      <div className="hero-overlay absolute inset-0 z-10 bg-gradient-to-b from-black/20 to-black/50"></div>
+      <div className="hero-overlay absolute inset-0 z-10 bg-gradient-to-b from-black/50 via-black/30 to-black/70"></div>
       
       <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center relative z-20 text-center">
         <motion.h1 
