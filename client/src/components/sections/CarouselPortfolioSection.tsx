@@ -156,7 +156,7 @@ const CarouselPortfolioSection = () => {
                   index % 2 === 0 ? 'rotate-2 origin-top-left' : '-rotate-2 origin-top-right'
                 } transition-all duration-500 hover:rotate-0 hover:scale-105 mx-auto`}>
                   <a 
-                    href={`#${item.categories[0]}`} 
+                    href={`/${item.categories[0]}`} 
                     className="block relative group"
                   >
                     {/* 4:5 aspect ratio container */}
