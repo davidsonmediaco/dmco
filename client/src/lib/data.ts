@@ -1,5 +1,13 @@
 import { PortfolioItemType } from "@/components/ui/PortfolioItem";
 
+// Helper function to get correct path to local images
+const imagePath = (category: string, filename: string) => `/images/${category}/${filename}`;
+
+// Example of how to use uploaded files:
+// For placeholder use: Use online images until you upload your own
+// After uploading your own photos, replace the imageUrl with: 
+// imageUrl: imagePath('portraits', 'your-filename.jpg')
+
 export const portfolioItems: PortfolioItemType[] = [
   // Portraits
   {

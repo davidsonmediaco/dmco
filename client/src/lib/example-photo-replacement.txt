@@ -1,0 +1,22 @@
+// EXAMPLE: After uploading your photo "my-portrait.jpg" to the client/public/images/portraits folder
+// Replace this in data.ts:
+
+{
+  id: 1,
+  title: "Creative Portraits",
+  subtitle: "Professional headshots",
+  imageUrl: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?q=80&w=987&auto=format&fit=crop",
+  categories: ["portraits"],
+  link: "#"
+}
+
+// WITH THIS:
+
+{
+  id: 1,
+  title: "Creative Portraits",
+  subtitle: "Professional headshots",
+  imageUrl: imagePath('portraits', 'my-portrait.jpg'),
+  categories: ["portraits"],
+  link: "#"
+}
