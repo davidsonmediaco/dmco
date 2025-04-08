@@ -17,8 +17,8 @@ const PortfolioSection = () => {
     { id: 'lifestyle', label: 'Lifestyle' },
     { id: 'portraits', label: 'Portraits' },
     { id: 'brands', label: 'Brands & Business' },
-    { id: 'music', label: 'Music' },
-    { id: 'dogs', label: 'Dogs' }
+    { id: 'music', label: 'Live Shows' },
+    { id: 'dogs', label: 'Man\'s Best Friend' }
   ];
 
   return (

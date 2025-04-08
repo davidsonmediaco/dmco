@@ -27,16 +27,16 @@ export const portfolioItems: PortfolioItemType[] = [
   },
   {
     id: 4,
-    title: "Sound Session",
-    subtitle: "Studio recording",
+    title: "Live Shows",
+    subtitle: "Concert photography",
     imageUrl: "https://images.unsplash.com/photo-1626628080286-8ec8be8e4e6e?q=80&w=1170&auto=format&fit=crop",
     categories: ["music"],
     link: "#"
   },
   {
     id: 5,
-    title: "Canine Collections",
-    subtitle: "Pet portraiture",
+    title: "Man's Best Friend",
+    subtitle: "Candid captures of our best friend",
     imageUrl: "https://images.unsplash.com/photo-1561037404-61cd46aa615b?q=80&w=1170&auto=format&fit=crop",
     categories: ["dogs"],
     link: "#"
