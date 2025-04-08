@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { portfolioItems } from "@/lib/data";
 import { PortfolioItemType } from "@/components/ui/PortfolioItem";
 
 type Category = 'portraits' | 'brands' | 'music' | 'dogs';
 
-const PortfolioSection = () => {
+const PortfolioGrid = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category>('portraits');
 
   const categories: { id: Category; label: string }[] = [
@@ -18,29 +18,6 @@ const PortfolioSection = () => {
   const filteredItems = portfolioItems.filter(item => 
     item.categories.includes(selectedCategory)
   );
-
-  // Animation variants
-  const container: Variants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-  
-  const itemAnimation: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1]
-      }
-    }
-  };
 
   return (
     <section id="work" className="py-20 bg-black">
@@ -83,48 +60,42 @@ const PortfolioSection = () => {
         </div>
         
         {/* Portfolio Grid */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-8"
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          {filteredItems.map((portfolioItem) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-8">
+          {filteredItems.map((item) => (
             <motion.div
-              key={portfolioItem.id}
-              variants={itemAnimation}
+              key={item.id}
               className="group"
-              initial="hidden"
-              animate="show"
-              exit="hidden"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
             >
               <div className="overflow-hidden rounded-lg shadow-xl shadow-primary/10 border border-gray-800/70 bg-gray-900/50 h-full transform transition-all duration-300 group-hover:border-primary/30">
                 <div className="relative">
                   <div className="overflow-hidden">
                     <img 
-                      src={portfolioItem.imageUrl} 
-                      alt={portfolioItem.title} 
+                      src={item.imageUrl} 
+                      alt={item.title} 
                       className="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-300"></div>
                   <div className="absolute top-4 right-4">
                     <span className="bg-primary text-black text-xs font-bold py-1 px-3 rounded-full shadow-lg">
-                      {portfolioItem.categories[0].charAt(0).toUpperCase() + portfolioItem.categories[0].slice(1)}
+                      {item.categories[0].charAt(0).toUpperCase() + item.categories[0].slice(1)}
                     </span>
                   </div>
                 </div>
                 <div className="p-6 border-t border-gray-800/50">
                   <h3 className="text-xl font-heading text-white tracking-wide mb-2 group-hover:text-primary transition-colors">
-                    {portfolioItem.title}
+                    {item.title}
                   </h3>
-                  <p className="text-gray-400 mb-5 text-sm">{portfolioItem.subtitle}</p>
+                  <p className="text-gray-400 mb-5 text-sm">{item.subtitle}</p>
                   <div className="flex justify-between items-center pt-2">
                     <div className="h-px w-1/4 bg-primary/30"></div>
                     <a
-                      href={portfolioItem.link}
+                      href={item.link}
                       className="text-primary hover:text-white font-medium transition-colors flex items-center gap-1 text-sm"
                     >
                       <span>View Project</span>
@@ -137,10 +108,10 @@ const PortfolioSection = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
 };
 
-export default PortfolioSection;
+export default PortfolioGrid;
