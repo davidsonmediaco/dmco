@@ -105,6 +105,32 @@ export const portfolioItems: PortfolioItemType[] = [
     link: "#"
   },
   
+  // Sports
+  {
+    id: 15,
+    title: "Action Shots",
+    subtitle: "Dynamic sports photography",
+    imageUrl: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1169&auto=format&fit=crop",
+    categories: ["sports"],
+    link: "#"
+  },
+  {
+    id: 16,
+    title: "Team Spirit",
+    subtitle: "Youth sports leagues",
+    imageUrl: "https://images.unsplash.com/photo-1526676037777-05a232554f77?q=80&w=1471&auto=format&fit=crop",
+    categories: ["sports"],
+    link: "#"
+  },
+  {
+    id: 17,
+    title: "Game Day",
+    subtitle: "Local championship coverage",
+    imageUrl: "https://images.unsplash.com/photo-1565992441121-4367c2967103?q=80&w=1023&auto=format&fit=crop",
+    categories: ["sports"],
+    link: "#"
+  },
+  
   // Additional lifestyle items (not in main categories)
   {
     id: 13,

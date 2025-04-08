@@ -1,7 +1,7 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
-import PortfolioGrid from "@/components/sections/PortfolioGrid";
+import SkewedPortfolioSection from "@/components/sections/SkewedPortfolioSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import WebDesignSection from "@/components/sections/WebDesignSection";
 import ContactSection from "@/components/sections/ContactSection";
@@ -35,7 +35,7 @@ const Home = () => {
       <Header />
       <main>
         <HeroSection />
-        <PortfolioGrid />
+        <SkewedPortfolioSection />
         <ServicesSection />
         <WebDesignSection />
         <ContactSection />
