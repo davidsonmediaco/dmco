@@ -46,7 +46,15 @@ export const portfolioItems: PortfolioItemType[] = [
     id: 5,
     title: "Portrait Photography",
     subtitle: "",
-    imageUrl: imagePath('portraits', 'IMG_1795.jpg'),
+    imageUrl: imagePath('portraits', 'IMG_4637.jpg'),
+    categories: ["portraits"],
+    link: "#"
+  },
+  {
+    id: 6,
+    title: "Portrait Photography",
+    subtitle: "",
+    imageUrl: imagePath('portraits', 'Danny-headshot.jpg'),
     categories: ["portraits"],
     link: "#"
   },
@@ -158,6 +166,22 @@ export const portfolioItems: PortfolioItemType[] = [
     categories: ["music"],
     link: "#"
   },
+  {
+    id: 17,
+    title: "Music Photography",
+    subtitle: "",
+    imageUrl: imagePath('music', 'A58A0203.jpg'),
+    categories: ["music"],
+    link: "#"
+  },
+  {
+    id: 18,
+    title: "Music Photography",
+    subtitle: "",
+    imageUrl: imagePath('music', 'A58A1043.jpg'),
+    categories: ["music"],
+    link: "#"
+  },
   
   // Man's Best Friend (Dogs)
   {
@@ -165,6 +189,22 @@ export const portfolioItems: PortfolioItemType[] = [
     title: "Dog Photography",
     subtitle: "Man's Best Friend",
     imageUrl: imagePath('dogs', 'IMG_2813.jpg'),
+    categories: ["dogs"],
+    link: "#"
+  },
+  {
+    id: 31,
+    title: "Dog Photography",
+    subtitle: "Man's Best Friend",
+    imageUrl: imagePath('dogs', 'IMG_9756.jpg'),
+    categories: ["dogs"],
+    link: "#"
+  },
+  {
+    id: 32,
+    title: "Dog Photography",
+    subtitle: "Man's Best Friend",
+    imageUrl: imagePath('dogs', 'IMG_9848.jpg'),
     categories: ["dogs"],
     link: "#"
   },
@@ -222,7 +262,7 @@ export const portfolioItems: PortfolioItemType[] = [
     id: 46,
     title: "Sports Photography",
     subtitle: "Action Shots",
-    imageUrl: imagePath('sports', '_MG_5771.jpg'),
+    imageUrl: imagePath('sports', '_MG_5774.jpg'),
     categories: ["sports"],
     link: "#"
   },
@@ -230,7 +270,7 @@ export const portfolioItems: PortfolioItemType[] = [
     id: 47,
     title: "Sports Photography",
     subtitle: "Action Shots",
-    imageUrl: imagePath('sports', '_MG_5774.jpg'),
+    imageUrl: imagePath('sports', 'IMG_2364.jpg'),
     categories: ["sports"],
     link: "#"
   }
