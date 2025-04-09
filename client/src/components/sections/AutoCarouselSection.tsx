@@ -158,16 +158,18 @@ const AutoCarouselSection = ({
                 <div className="carousel-image-container w-full h-full">
                   <div className="w-full h-full flex flex-col items-center justify-center">
                     <div className="flex-1 flex items-center justify-center py-6 px-4 w-full">
-                      <img 
-                        src={item.imageUrl} 
-                        alt={item.title}
-                        className="max-w-full max-h-[480px] object-contain rounded shadow-xl protected-image"
-                        style={{ 
-                          filter: "drop-shadow(0 20px 13px rgb(0 0 0 / 0.08)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))"
-                        }}
-                        draggable="false"
-                        onContextMenu={(e) => e.preventDefault()}
-                      />
+                      <div className="image-container">
+                        <img 
+                          src={item.imageUrl} 
+                          alt={item.title}
+                          className="max-w-full max-h-[480px] object-contain rounded shadow-xl protected-image"
+                          style={{ 
+                            filter: "drop-shadow(0 20px 13px rgb(0 0 0 / 0.08)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))"
+                          }}
+                          draggable="false"
+                          onContextMenu={(e) => e.preventDefault()}
+                        />
+                      </div>
                     </div>
                     
                     {/* Caption area without overlay */}

@@ -94,3 +94,21 @@ img {
   -webkit-touch-callout: none;
   position: relative;
 }
+
+/* Image container with invisible overlay to prevent browser extensions from adding save buttons */
+.image-container {
+  position: relative;
+}
+
+.image-container::before,
+.image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 999;
+  pointer-events: none;
+}

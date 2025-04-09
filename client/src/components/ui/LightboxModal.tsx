@@ -82,13 +82,15 @@ const LightboxModal = ({ isOpen, onClose, images, currentIndex = 0 }: LightboxMo
           
           {/* Image container */}
           <div className="w-full h-full flex items-center justify-center p-8">
-            <img 
-              src={images[index]} 
-              alt={`Gallery image ${index + 1}`}
-              className="max-h-[calc(95vh-100px)] max-w-[calc(95vw-100px)] object-contain protected-image"
-              draggable="false"
-              onContextMenu={(e) => e.preventDefault()}
-            />
+            <div className="image-container">
+              <img 
+                src={images[index]} 
+                alt={`Gallery image ${index + 1}`}
+                className="max-h-[calc(95vh-100px)] max-w-[calc(95vw-100px)] object-contain protected-image"
+                draggable="false"
+                onContextMenu={(e) => e.preventDefault()}
+              />
+            </div>
           </div>
           
           {/* Navigation arrows - only show if there are multiple images */}

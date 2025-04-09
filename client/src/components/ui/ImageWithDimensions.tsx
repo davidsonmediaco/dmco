@@ -35,7 +35,7 @@ const ImageWithDimensions = ({ src, alt, className = '' }: ImageWithDimensionsPr
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="w-full h-full overflow-hidden relative">
+      <div className="w-full h-full overflow-hidden relative image-container">
         <img
           ref={imgRef}
           src={src}

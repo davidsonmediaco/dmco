@@ -161,13 +161,15 @@ const CarouselPortfolioSection = () => {
                   >
                     {/* Natural aspect ratio container */}
                     <div className="relative bg-black p-3 rounded">
-                      <img 
-                        src={item.imageUrl} 
-                        alt={item.title}
-                        className="w-full h-auto object-contain rounded protected-image"
-                        draggable="false"
-                        onContextMenu={(e) => e.preventDefault()}
-                      />
+                      <div className="image-container">
+                        <img 
+                          src={item.imageUrl} 
+                          alt={item.title}
+                          className="w-full h-auto object-contain rounded protected-image"
+                          draggable="false"
+                          onContextMenu={(e) => e.preventDefault()}
+                        />
+                      </div>
                       
                       {/* Category label */}
                       <div className="absolute top-4 right-4 bg-primary text-black text-sm font-bold py-1 px-3 rounded-full">
