@@ -16,7 +16,7 @@
 .masonry-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2px;
+  gap: 16px;
   width: 100%;
 }
 
@@ -35,20 +35,22 @@
 .masonry-column {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 16px;
 }
 
 .masonry-item {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: all 0.2s ease-in-out;
-  margin-bottom: 2px;
-  background-color: black;
+  transition: all 0.3s ease-in-out;
+  border-radius: 6px;
+  background-color: #111;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .masonry-item:hover {
-  transform: scale(1.01);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
   z-index: 1;
 }
 
@@ -57,6 +59,18 @@
   height: auto;
   display: block;
   object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Responsive padding for mobile */
+@media (max-width: 640px) {
+  .masonry-grid {
+    gap: 12px;
+  }
+  
+  .masonry-column {
+    gap: 12px;
+  }
 }
 
 /* Row grid layout (5 items per row) */
