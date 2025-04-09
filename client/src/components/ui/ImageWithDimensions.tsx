@@ -44,8 +44,7 @@ const ImageWithDimensions = ({ src, alt, className = '' }: ImageWithDimensionsPr
           style={{
             transform: isHovered ? 'scale(1.02)' : 'scale(1.0)',
             transition: 'transform 0.5s ease-in-out',
-            objectFit: 'contain',
-            backgroundColor: '#1a1a1a'
+            objectFit: 'cover'
           }}
         />
       </div>

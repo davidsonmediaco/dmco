@@ -97,7 +97,7 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
         <div className="container mx-auto px-4">
           {/* Portfolio Grid - Uniform grid layout for better alignment */}
           <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -109,29 +109,22 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.05 * index }}
-                  className="relative group aspect-square bg-zinc-900 overflow-hidden"
+                  className="relative group aspect-square overflow-hidden"
                 >
-                  <div className="relative overflow-hidden w-full h-full">
-                    {/* Each item has the same container size for better alignment */}
-                    <div className="relative w-full h-full">
-                      <div 
-                        onClick={() => {
-                          setCurrentImageIndex(index);
-                          setLightboxOpen(true);
-                        }}
-                        className="cursor-pointer w-full h-full block"
-                      >
-                        <div className="w-full h-full">
-                          <ImageWithDimensions 
-                            src={item.imageUrl}
-                            alt={item.title}
-                          />
-                        </div>
-                      </div>
-                      
-                      {/* Very subtle overlay that appears on hover - just for visual feedback */}
-                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
+                  <div 
+                    onClick={() => {
+                      setCurrentImageIndex(index);
+                      setLightboxOpen(true);
+                    }}
+                    className="cursor-pointer w-full h-full flex items-center justify-center"
+                  >
+                    <ImageWithDimensions 
+                      src={item.imageUrl}
+                      alt={item.title}
+                    />
+                    
+                    {/* Very subtle overlay that appears on hover - just for visual feedback */}
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 </motion.div>
               );
