@@ -97,14 +97,15 @@ function removeSaveButtons() {
     buttonSelectors.forEach(selector => {
       try {
         document.querySelectorAll(selector).forEach(element => {
-          element.style.display = 'none';
-          element.style.visibility = 'hidden';
-          element.style.opacity = '0';
-          element.style.pointerEvents = 'none';
-          element.style.position = 'absolute';
-          element.style.zIndex = '-9999';
-          element.setAttribute('aria-hidden', 'true');
-          element.setAttribute('tabindex', '-1');
+          const el = element as HTMLElement;
+          el.style.display = 'none';
+          el.style.visibility = 'hidden';
+          el.style.opacity = '0';
+          el.style.pointerEvents = 'none';
+          el.style.position = 'absolute';
+          el.style.zIndex = '-9999';
+          el.setAttribute('aria-hidden', 'true');
+          el.setAttribute('tabindex', '-1');
           
           // Try to remove the element if possible
           try {
@@ -122,18 +123,30 @@ function removeSaveButtons() {
     });
     
     // Also scan for elements with certain class names or styles that might be buttons
-    document.querySelectorAll('*').forEach(el => {
-      const classNames = el.className.toString().toLowerCase();
+    document.querySelectorAll('*').forEach((element) => {
+      const el = element as HTMLElement;
+      // Skip text nodes or other non-elements
+      if (!el.tagName) return;
+      
+      let classNames = '';
+      try {
+        classNames = (el.className && typeof el.className === 'string') ? 
+          el.className.toString().toLowerCase() : '';
+      } catch (e) {
+        // Some SVG elements might throw errors when accessing className
+        return;
+      }
+      
       const tagName = el.tagName.toLowerCase();
       
       // Only check likely candidates to avoid performance issues
       if ((tagName === 'button' || tagName === 'a' || tagName === 'div') && 
           (classNames.includes('save') || classNames.includes('pin') || 
            classNames.includes('download') || classNames.includes('collect'))) {
-        el.style.display = 'none !important';
-        el.style.visibility = 'hidden !important';
-        el.style.opacity = '0 !important';
-        el.style.pointerEvents = 'none !important';
+        el.style.display = 'none';
+        el.style.visibility = 'hidden';
+        el.style.opacity = '0';
+        el.style.pointerEvents = 'none';
       }
       
       // Block any click handlers on image-related elements

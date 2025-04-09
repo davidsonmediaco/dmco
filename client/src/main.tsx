@@ -64,6 +64,57 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Need to wait a bit for external scripts to try to inject buttons
   setTimeout(disableSaveFeatures, 100);
+  
+  // Direct approach to find and remove save buttons
+  setTimeout(() => {
+    // Find all black buttons over images by using more specific selectors
+    const blackButtons = document.querySelectorAll('button.image-save, div.image-save, button.save-button, [role="button"][style*="background:black"], [style*="background-color:black"][role="button"]');
+    
+    // Log what we found
+    console.log('Found potential save buttons:', blackButtons.length);
+    
+    // Force remove them
+    blackButtons.forEach(button => {
+      console.log('Removing button:', button);
+      button.remove();
+    });
+    
+    // Check all elements with z-index greater than 10
+    document.querySelectorAll('*').forEach((element) => {
+      const el = element as HTMLElement;
+      if (!el.tagName) return; // Skip non-elements
+      
+      const style = window.getComputedStyle(el);
+      const zIndex = parseInt(style.zIndex);
+      
+      // If it's a high z-index element on top of images, it might be our save button
+      if (!isNaN(zIndex) && zIndex > 10) {
+        const rect = el.getBoundingClientRect();
+        // If it's small like a button and visible
+        if (rect.width > 0 && rect.width < 100 && rect.height > 0 && rect.height < 100 && 
+            style.display !== 'none' && style.visibility !== 'hidden') {
+          console.log('Found potential overlay button:', el);
+          // Hide it completely
+          el.style.display = 'none';
+          el.style.visibility = 'hidden';
+          el.style.opacity = '0';
+        }
+      }
+      
+      // Specifically check for black background elements - these could be the save buttons
+      const bgColor = style.backgroundColor;
+      if (bgColor === 'rgb(0, 0, 0)' || bgColor === '#000000' || bgColor === 'black') {
+        // If the element is small and could be a button
+        const rect = el.getBoundingClientRect();
+        if (rect.width > 0 && rect.width < 60 && rect.height > 0 && rect.height < 60) {
+          console.log('Found black button element:', el);
+          el.style.display = 'none';
+          el.style.visibility = 'hidden';
+          el.remove();
+        }
+      }
+    });
+  }, 1000);
 });
 
 // Create React root and render App

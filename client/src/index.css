@@ -111,7 +111,58 @@ img {
   bottom: 0;
   background: transparent;
   z-index: 9999 !important;
-  pointer-events: none;
+  /* Important: This blocks clicks on any element under this layer */
+  pointer-events: auto !important;
+}
+
+/* Force all images to use a higher z-index than potential save buttons */
+img.protected-image {
+  z-index: 1;
+  position: relative;
+}
+
+/* Add specific blocker for the top-right corner where save buttons typically appear */
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+}
+
+/* Prevent any kind of button from appearing over images */
+img + button,
+img + div[role="button"],
+img + span[role="button"],
+img ~ button,
+img ~ div[role="button"],
+img ~ span[role="button"],
+.image-container button,
+.image-container [role="button"],
+.masonry-item button,
+.masonry-item [role="button"],
+.carousel-image-container button,
+.carousel-image-container [role="button"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Target a floating 'Save' button with a dark background */
+button:not(.embla__button):not(.lightbox-control),
+[role="button"]:not(.embla__button):not(.lightbox-control) {
+  background-color: transparent !important;
+}
+
+/* Specifically target small black buttons that might be save buttons */
+div[style*="position: absolute"],
+div[style*="position:absolute"] {
+  background-color: transparent !important;
 }
 
 /* Hide any buttons on or around images */
