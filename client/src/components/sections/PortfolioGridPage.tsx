@@ -19,7 +19,7 @@ const getCategoryHeroImage = (category: string): string => {
     case 'music':
       return "https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=1470&auto=format&fit=crop";
     case 'dogs':
-      return "https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?q=80&w=1374&auto=format&fit=crop";
+      return "/images/dogs/IMG_2813.jpg";
     case 'sports':
       return "https://images.unsplash.com/photo-1577471488278-16eec37ffcc2?q=80&w=1470&auto=format&fit=crop";
     default:

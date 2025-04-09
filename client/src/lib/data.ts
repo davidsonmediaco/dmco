@@ -160,7 +160,14 @@ export const portfolioItems: PortfolioItemType[] = [
   },
   
   // Man's Best Friend (Dogs)
-  // Ready for your dog images
+  {
+    id: 30,
+    title: "Dog Photography",
+    subtitle: "Man's Best Friend",
+    imageUrl: imagePath('dogs', 'IMG_2813.jpg'),
+    categories: ["dogs"],
+    link: "#"
+  }
   
   // Sports
   // Ready for your sports images
