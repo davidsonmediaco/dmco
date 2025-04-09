@@ -4,6 +4,7 @@ import { portfolioItems } from "@/lib/data";
 import { PortfolioItemType } from "@/components/ui/PortfolioItem";
 import ImageWithDimensions from "@/components/ui/ImageWithDimensions";
 import LightboxModal from "@/components/ui/LightboxModal";
+import MasonryGrid from "@/components/ui/MasonryGrid";
 
 interface PortfolioGridPageProps {
   category: string;
@@ -95,40 +96,19 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
       
       <section className="py-20">
         <div className="container mx-auto px-4">
-          {/* Portfolio Grid - Uniform grid layout for better alignment */}
+          {/* Masonry grid layout */}
           <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            {items.map((item, index) => {
-              return (
-                <motion.div 
-                  key={item.id}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.05 * index }}
-                  className="relative group aspect-square overflow-hidden"
-                >
-                  <div 
-                    onClick={() => {
-                      setCurrentImageIndex(index);
-                      setLightboxOpen(true);
-                    }}
-                    className="cursor-pointer w-full h-full flex items-center justify-center"
-                  >
-                    <ImageWithDimensions 
-                      src={item.imageUrl}
-                      alt={item.title}
-                    />
-                    
-                    {/* Very subtle overlay that appears on hover - just for visual feedback */}
-                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-                </motion.div>
-              );
-            })}
+            <MasonryGrid 
+              items={items} 
+              onImageClick={(index) => {
+                setCurrentImageIndex(index);
+                setLightboxOpen(true);
+              }} 
+            />
           </motion.div>
           
           {/* Back to portfolio button */}

@@ -59,7 +59,13 @@ const LightboxModal = ({ isOpen, onClose, images, currentIndex = 0 }: LightboxMo
   
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-black/95 border-zinc-800 flex items-center justify-center">
+      <DialogContent 
+        className="max-w-[95vw] max-h-[95vh] p-0 bg-black/95 border-zinc-800 flex items-center justify-center"
+        aria-describedby="lightbox-description"
+      >
+        <div id="lightbox-description" className="sr-only">
+          Image gallery lightbox. Use arrow keys to navigate between images. Press Escape to close.
+        </div>
         <div className="relative w-full h-full flex flex-col items-center justify-center">
           {/* Close button */}
           <button 
