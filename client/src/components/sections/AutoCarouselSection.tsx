@@ -107,9 +107,30 @@ const AutoCarouselSection = ({
           </div>
         </div>
         
-        <div className="relative bg-zinc-900 rounded-lg overflow-hidden" style={{ minHeight: "450px", maxHeight: "600px" }}>
+        <div className="relative bg-black rounded-lg overflow-hidden flex flex-col" style={{ minHeight: "450px", maxWidth: "1200px", margin: "0 auto" }}>
+          {/* Navigation controls */}
+          <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20">
+            <button 
+              onClick={goToPrev}
+              className="p-3 rounded-full bg-black/50 hover:bg-primary/80 text-white transition-colors"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+          </div>
+          
+          <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20">
+            <button 
+              onClick={goToNext}
+              className="p-3 rounded-full bg-black/50 hover:bg-primary/80 text-white transition-colors"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+          
           {/* Progress indicator */}
-          <div className="absolute bottom-0 left-0 right-0 z-10 flex justify-center gap-2 p-4">
+          <div className="absolute bottom-0 left-0 right-0 z-20 flex justify-center gap-2 p-4">
             {displayItems.map((_, index) => (
               <button
                 key={index}
@@ -123,42 +144,41 @@ const AutoCarouselSection = ({
           </div>
           
           {/* Slides */}
-          <div className="flex justify-center items-center w-full h-full" style={{ minHeight: "450px", maxHeight: "600px" }}>
+          <div className="flex-1 w-full flex items-center justify-center p-6 overflow-hidden">
             {displayItems.map((item, index) => (
               <motion.div
                 key={item.id}
-                className={`w-full h-full flex justify-center items-center ${index === currentIndex ? '' : 'hidden'}`}
+                className={`w-full h-full flex justify-center items-center ${index === currentIndex ? 'block' : 'hidden'}`}
                 initial={{ opacity: 0 }}
                 animate={{ 
                   opacity: index === currentIndex ? 1 : 0,
-                  zIndex: index === currentIndex ? 1 : 0
                 }}
                 transition={{ duration: 0.5 }}
-                style={{ minHeight: "450px", maxHeight: "600px" }}
               >
-                <div className="absolute inset-0 bg-black/40 z-10" />
-                <div className="w-full h-full flex justify-center items-center relative">
-                  <img 
-                    src={item.imageUrl} 
-                    alt={item.title}
-                    className="max-w-full max-h-full object-contain transition-transform duration-10000 ease-out"
-                    style={{
-                      transform: index === currentIndex ? 'scale(1.02)' : 'scale(1)',
-                      height: "auto",
-                      maxHeight: "100%",
-                      position: "relative",
-                      zIndex: 5
-                    }}
-                  />
-                </div>
-                
-                <div className="absolute bottom-0 left-0 p-6 md:p-8 z-20 max-w-[80%]">
-                  <h3 className="text-xl md:text-2xl font-heading text-white mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm md:text-base text-zinc-200 mb-4">
-                    {item.subtitle}
-                  </p>
+                <div className="carousel-image-container w-full h-full">
+                  <div className="w-full h-full flex items-center justify-center relative pb-16">
+                    <div className="relative max-w-[90%] max-h-[400px] flex items-center justify-center p-2">
+                      <img 
+                        src={item.imageUrl} 
+                        alt={item.title}
+                        className="max-w-full max-h-[400px] object-contain rounded-sm"
+                      />
+                    </div>
+                    
+                    {/* Dark overlay for the caption area */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-4 z-10">
+                      <div className="container mx-auto">
+                        <h3 className="text-xl md:text-2xl font-heading text-white mb-1 truncate">
+                          {item.title}
+                        </h3>
+                        {item.subtitle && (
+                          <p className="text-sm md:text-base text-zinc-200 truncate">
+                            {item.subtitle}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
