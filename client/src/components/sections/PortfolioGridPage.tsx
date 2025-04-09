@@ -82,40 +82,37 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
       
       <section className="py-20">
         <div className="container mx-auto px-4">
-          {/* Portfolio Grid - Minimalist style with variable image sizes */}
+          {/* Portfolio Grid - Uniform grid layout for better alignment */}
           <motion.div 
-            className="grid grid-cols-12 gap-2"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             {items.map((item, index) => {
-              // Determine if this image should span 2 columns (larger image)
-              // First 2 items are large (span 6 columns), next items alternate between span-4 and span-3
-              const columnSpan = index < 2 ? 'col-span-12 sm:col-span-6' : 
-                                 index % 3 === 0 ? 'col-span-12 sm:col-span-4' : 'col-span-6 sm:col-span-4 md:col-span-3';
-              
               return (
                 <motion.div 
                   key={item.id}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.05 * index }}
-                  className={`relative group ${columnSpan}`}
+                  className="relative group aspect-square bg-zinc-900 overflow-hidden"
                 >
-                  <div className="relative overflow-hidden w-full h-full bg-transparent">
-                    {/* Natural aspect ratio container */}
-                    <div className="relative w-full">
+                  <div className="relative overflow-hidden w-full h-full">
+                    {/* Each item has the same container size for better alignment */}
+                    <div className="relative w-full h-full">
                       <a 
                         href={item.imageUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="cursor-pointer w-full h-full block"
                       >
-                        <ImageWithDimensions 
-                          src={item.imageUrl}
-                          alt={item.title}
-                        />
+                        <div className="w-full h-full">
+                          <ImageWithDimensions 
+                            src={item.imageUrl}
+                            alt={item.title}
+                          />
+                        </div>
                       </a>
                       
                       {/* Very subtle overlay that appears on hover - just for visual feedback */}
