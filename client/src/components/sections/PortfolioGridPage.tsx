@@ -13,7 +13,7 @@ interface PortfolioGridPageProps {
 const getCategoryHeroImage = (category: string): string => {
   switch(category) {
     case 'portraits':
-      return "https://images.unsplash.com/photo-1610652492500-ded49ceeb378?q=80&w=1974&auto=format&fit=crop";
+      return "/images/portraits/Danny-headshot.jpg";
     case 'brands':
       return "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop";
     case 'music':
