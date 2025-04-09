@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { portfolioItems } from "@/lib/data";
 import { PortfolioItemType } from "@/components/ui/PortfolioItem";
+import LightboxModal from "@/components/ui/LightboxModal";
 
 interface PortfolioGridPageProps {
   category: string;
@@ -29,6 +30,8 @@ const getCategoryHeroImage = (category: string): string => {
 
 const PortfolioGridPage = ({ category, title, description }: PortfolioGridPageProps) => {
   const [items, setItems] = useState<PortfolioItemType[]>([]);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Filter items by category
   useEffect(() => {
@@ -39,9 +42,20 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
   }, [category]);
 
   const heroImageUrl = getCategoryHeroImage(category);
+  
+  // Extract just the image URLs for the lightbox
+  const imageUrls = items.map(item => item.imageUrl);
 
   return (
     <div className="bg-black min-h-screen">
+      {/* Lightbox Modal */}
+      <LightboxModal 
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        images={imageUrls}
+        currentIndex={currentImageIndex}
+      />
+        
       {/* Hero Section with Parallax Effect */}
       <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div 
@@ -80,49 +94,53 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
       
       <section className="py-20">
         <div className="container mx-auto px-4">
-          {/* Portfolio Grid - Masonry style with consistent spacing */}
+          {/* Portfolio Grid - Minimalist style with variable image sizes */}
           <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+            className="grid grid-cols-12 gap-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            {items.map((item, index) => (
-              <motion.div 
-                key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 * index }}
-                className="relative group"
-              >
-                <div className="relative overflow-hidden rounded-lg shadow-xl bg-gray-900">
-                  {/* Image container with consistent height */}
-                  <div className="relative h-[300px] md:h-[350px]">
-                    <div className="absolute inset-0 flex items-center justify-center">
+            {items.map((item, index) => {
+              // Determine if this image should span 2 columns (larger image)
+              // First 2 items are large (span 6 columns), next items alternate between span-4 and span-3
+              const columnSpan = index < 2 ? 'col-span-12 sm:col-span-6' : 
+                                 index % 3 === 0 ? 'col-span-12 sm:col-span-4' : 'col-span-6 sm:col-span-4 md:col-span-3';
+              
+              return (
+                <motion.div 
+                  key={item.id}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.05 * index }}
+                  className={`relative group ${columnSpan}`}
+                >
+                  <div className="relative overflow-hidden w-full h-full bg-transparent">
+                    {/* Natural aspect ratio container */}
+                    <div className="relative w-full">
                       <img 
                         src={item.imageUrl} 
                         alt={item.title}
-                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-auto object-cover transition-transform duration-500 cursor-pointer"
+                        style={{
+                          transform: `scale(1.0)`,
+                          transition: 'transform 0.5s ease-in-out'
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
+                        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1.0)'}
+                        onClick={() => {
+                          setCurrentImageIndex(index);
+                          setLightboxOpen(true);
+                        }}
                       />
-                    </div>
-                    
-                    {/* Gradient overlay that appears on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-500"></div>
-                    
-                    {/* Title that appears on hover */}
-                    <div className="absolute bottom-0 left-0 p-6 w-full transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                      <h3 className="text-2xl font-heading text-white mb-2">{item.title}</h3>
-                      <p className="text-primary">{item.subtitle}</p>
+                      
+                      {/* Very subtle overlay that appears on hover - just for visual feedback */}
+                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                   </div>
-                  
-                  {/* Category tag */}
-                  <div className="absolute top-4 right-4 bg-primary text-black text-sm font-bold py-1 px-3 rounded-full">
-                    {category.charAt(0).toUpperCase() + category.slice(1)}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </motion.div>
           
           {/* Back to portfolio button */}
