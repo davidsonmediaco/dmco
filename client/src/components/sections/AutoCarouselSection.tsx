@@ -107,7 +107,7 @@ const AutoCarouselSection = ({
           </div>
         </div>
         
-        <div className="relative bg-black rounded-lg overflow-hidden flex flex-col" style={{ minHeight: "450px", maxWidth: "1200px", margin: "0 auto" }}>
+        <div className="relative bg-black border border-zinc-800 rounded-lg overflow-hidden flex flex-col" style={{ height: "600px", maxWidth: "1200px", margin: "0 auto" }}>
           {/* Navigation controls */}
           <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20">
             <button 
@@ -156,27 +156,28 @@ const AutoCarouselSection = ({
                 transition={{ duration: 0.5 }}
               >
                 <div className="carousel-image-container w-full h-full">
-                  <div className="w-full h-full flex items-center justify-center relative pb-16">
-                    <div className="relative max-w-[90%] max-h-[400px] flex items-center justify-center p-2">
+                  <div className="w-full h-full flex flex-col items-center justify-center">
+                    <div className="flex-1 flex items-center justify-center py-6 px-4 w-full">
                       <img 
                         src={item.imageUrl} 
                         alt={item.title}
-                        className="max-w-full max-h-[400px] object-contain rounded-sm"
+                        className="max-w-full max-h-[480px] object-contain rounded shadow-xl"
+                        style={{ 
+                          filter: "drop-shadow(0 20px 13px rgb(0 0 0 / 0.08)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))"
+                        }}
                       />
                     </div>
                     
-                    {/* Dark overlay for the caption area */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-4 z-10">
-                      <div className="container mx-auto">
-                        <h3 className="text-xl md:text-2xl font-heading text-white mb-1 truncate">
-                          {item.title}
-                        </h3>
-                        {item.subtitle && (
-                          <p className="text-sm md:text-base text-zinc-200 truncate">
-                            {item.subtitle}
-                          </p>
-                        )}
-                      </div>
+                    {/* Caption area without overlay */}
+                    <div className="px-4 py-3 w-full text-center">
+                      <h3 className="text-xl md:text-2xl font-heading text-white">
+                        {item.title}
+                      </h3>
+                      {item.subtitle && (
+                        <p className="text-sm md:text-base text-zinc-400 mt-1">
+                          {item.subtitle}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>

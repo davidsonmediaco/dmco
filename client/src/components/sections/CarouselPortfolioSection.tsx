@@ -159,26 +159,23 @@ const CarouselPortfolioSection = () => {
                     href={`/${item.categories[0]}`} 
                     className="block relative group"
                   >
-                    {/* 4:5 aspect ratio container */}
-                    <div className="relative" style={{ paddingBottom: '125%' }}> {/* 4:5 aspect ratio */}
+                    {/* Natural aspect ratio container */}
+                    <div className="relative bg-black p-3 rounded">
                       <img 
                         src={item.imageUrl} 
                         alt={item.title}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="w-full h-auto object-contain rounded"
                       />
-                      
-                      {/* Gradient overlay that appears on hover */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-500"></div>
                       
                       {/* Category label */}
                       <div className="absolute top-4 right-4 bg-primary text-black text-sm font-bold py-1 px-3 rounded-full">
                         {item.categories[0].charAt(0).toUpperCase() + item.categories[0].slice(1)}
                       </div>
                       
-                      {/* Title that appears on hover */}
-                      <div className="absolute bottom-0 left-0 p-8 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                        <h3 className="text-3xl font-heading text-white mb-2">{item.title}</h3>
-                        <p className="text-primary">{item.subtitle}</p>
+                      {/* Title below image */}
+                      <div className="pt-3 pb-1 px-1">
+                        <h3 className="text-2xl font-heading text-white">{item.title}</h3>
+                        <p className="text-zinc-400">{item.subtitle}</p>
                       </div>
                     </div>
                   </a>
