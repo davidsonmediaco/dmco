@@ -36,7 +36,54 @@ export const portfolioItems: PortfolioItemType[] = [
   },
   
   // Brands & Business
-  // Ready for your brand images
+  {
+    id: 4,
+    title: "Brand Photography",
+    subtitle: "",
+    imageUrl: imagePath('brands', 'IMG_9346.jpg'),
+    categories: ["brands"],
+    link: "#"
+  },
+  {
+    id: 5,
+    title: "Brand Photography",
+    subtitle: "",
+    imageUrl: imagePath('brands', 'IMG_9352.jpg'),
+    categories: ["brands"],
+    link: "#"
+  },
+  {
+    id: 6,
+    title: "Brand Photography",
+    subtitle: "",
+    imageUrl: imagePath('brands', 'IMG_9360.jpg'),
+    categories: ["brands"],
+    link: "#"
+  },
+  {
+    id: 7,
+    title: "Brand Photography",
+    subtitle: "",
+    imageUrl: imagePath('brands', 'IMG_9382-Enhanced-NR.jpg'),
+    categories: ["brands"],
+    link: "#"
+  },
+  {
+    id: 8,
+    title: "Brand Photography",
+    subtitle: "",
+    imageUrl: imagePath('brands', 'IMG_9423.jpg'),
+    categories: ["brands"],
+    link: "#"
+  },
+  {
+    id: 9,
+    title: "Brand Photography",
+    subtitle: "",
+    imageUrl: imagePath('brands', 'IMG_9433-Enhanced-NR.jpg'),
+    categories: ["brands"],
+    link: "#"
+  }
   
   // Live Shows (Music)
   // Ready for your music images
