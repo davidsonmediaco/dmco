@@ -28,7 +28,7 @@ const AutoCarouselSection = ({
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   
   // Filter for wide images only and select the first 5
-  const wideItems = items.filter(item => item.isWide !== false);
+  const wideItems = items.filter(item => item.isWide === true);
   const displayItems = wideItems.slice(0, 5);
   
   // Function to go to next slide

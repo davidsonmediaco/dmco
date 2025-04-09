@@ -174,7 +174,7 @@ export const portfolioItems: PortfolioItemType[] = [
     imageUrl: imagePath('music', 'A58A1317.jpg'),
     categories: ["music"],
     link: "#",
-    isWide: false
+    isWide: false  // Keeping this as false since it's a vertical image
   },
   {
     id: 16,
