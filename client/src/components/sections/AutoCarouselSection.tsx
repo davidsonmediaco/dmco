@@ -107,7 +107,7 @@ const AutoCarouselSection = ({
           </div>
         </div>
         
-        <div className="relative aspect-[16/9] bg-zinc-900 rounded-lg overflow-hidden">
+        <div className="relative bg-zinc-900 rounded-lg overflow-hidden" style={{ minHeight: "450px", maxHeight: "600px" }}>
           {/* Progress indicator */}
           <div className="absolute bottom-0 left-0 right-0 z-10 flex justify-center gap-2 p-4">
             {displayItems.map((_, index) => (
@@ -123,27 +123,34 @@ const AutoCarouselSection = ({
           </div>
           
           {/* Slides */}
-          <div className="absolute inset-0">
+          <div className="flex justify-center items-center w-full h-full" style={{ minHeight: "450px", maxHeight: "600px" }}>
             {displayItems.map((item, index) => (
               <motion.div
                 key={item.id}
-                className="absolute inset-0 overflow-hidden"
+                className={`w-full h-full flex justify-center items-center ${index === currentIndex ? '' : 'hidden'}`}
                 initial={{ opacity: 0 }}
                 animate={{ 
                   opacity: index === currentIndex ? 1 : 0,
                   zIndex: index === currentIndex ? 1 : 0
                 }}
                 transition={{ duration: 0.5 }}
+                style={{ minHeight: "450px", maxHeight: "600px" }}
               >
                 <div className="absolute inset-0 bg-black/40 z-10" />
-                <img 
-                  src={item.imageUrl} 
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-10000 ease-out"
-                  style={{
-                    transform: index === currentIndex ? 'scale(1.05)' : 'scale(1)'
-                  }}
-                />
+                <div className="w-full h-full flex justify-center items-center relative">
+                  <img 
+                    src={item.imageUrl} 
+                    alt={item.title}
+                    className="max-w-full max-h-full object-contain transition-transform duration-10000 ease-out"
+                    style={{
+                      transform: index === currentIndex ? 'scale(1.02)' : 'scale(1)',
+                      height: "auto",
+                      maxHeight: "100%",
+                      position: "relative",
+                      zIndex: 5
+                    }}
+                  />
+                </div>
                 
                 <div className="absolute bottom-0 left-0 p-6 md:p-8 z-20 max-w-[80%]">
                   <h3 className="text-xl md:text-2xl font-heading text-white mb-2">

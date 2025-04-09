@@ -96,13 +96,15 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
                 className="relative group"
               >
                 <div className="relative overflow-hidden rounded-lg shadow-xl bg-gray-900">
-                  {/* Aspect ratio container that handles both portrait and landscape images */}
-                  <div className="relative" style={{ paddingBottom: index % 3 === 0 ? '125%' : '75%' }}>
-                    <img 
-                      src={item.imageUrl} 
-                      alt={item.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                  {/* Image container with consistent height */}
+                  <div className="relative h-[300px] md:h-[350px]">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <img 
+                        src={item.imageUrl} 
+                        alt={item.title}
+                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
                     
                     {/* Gradient overlay that appears on hover */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-500"></div>
