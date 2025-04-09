@@ -22,7 +22,7 @@ const getCategoryHeroImage = (category: string): string => {
     case 'dogs':
       return "/images/dogs/IMG_2813.jpg";
     case 'sports':
-      return "https://images.unsplash.com/photo-1577471488278-16eec37ffcc2?q=80&w=1470&auto=format&fit=crop";
+      return "/images/sports/_MG_5754.jpg";
     default:
       return "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?q=80&w=1470&auto=format&fit=crop";
   }

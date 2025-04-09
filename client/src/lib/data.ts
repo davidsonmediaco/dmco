@@ -167,8 +167,71 @@ export const portfolioItems: PortfolioItemType[] = [
     imageUrl: imagePath('dogs', 'IMG_2813.jpg'),
     categories: ["dogs"],
     link: "#"
-  }
+  },
   
   // Sports
-  // Ready for your sports images
+  {
+    id: 40,
+    title: "Sports Photography",
+    subtitle: "Action Shots",
+    imageUrl: imagePath('sports', '_MG_5681.jpg'),
+    categories: ["sports"],
+    link: "#"
+  },
+  {
+    id: 41,
+    title: "Sports Photography",
+    subtitle: "Action Shots",
+    imageUrl: imagePath('sports', '_MG_5692.jpg'),
+    categories: ["sports"],
+    link: "#"
+  },
+  {
+    id: 42,
+    title: "Sports Photography",
+    subtitle: "Action Shots",
+    imageUrl: imagePath('sports', '_MG_5700.jpg'),
+    categories: ["sports"],
+    link: "#"
+  },
+  {
+    id: 43,
+    title: "Sports Photography",
+    subtitle: "Action Shots",
+    imageUrl: imagePath('sports', '_MG_5754.jpg'),
+    categories: ["sports"],
+    link: "#"
+  },
+  {
+    id: 44,
+    title: "Sports Photography",
+    subtitle: "Action Shots",
+    imageUrl: imagePath('sports', '_MG_5763.jpg'),
+    categories: ["sports"],
+    link: "#"
+  },
+  {
+    id: 45,
+    title: "Sports Photography",
+    subtitle: "Action Shots",
+    imageUrl: imagePath('sports', '_MG_5767.jpg'),
+    categories: ["sports"],
+    link: "#"
+  },
+  {
+    id: 46,
+    title: "Sports Photography",
+    subtitle: "Action Shots",
+    imageUrl: imagePath('sports', '_MG_5771.jpg'),
+    categories: ["sports"],
+    link: "#"
+  },
+  {
+    id: 47,
+    title: "Sports Photography",
+    subtitle: "Action Shots",
+    imageUrl: imagePath('sports', '_MG_5774.jpg'),
+    categories: ["sports"],
+    link: "#"
+  }
 ];
