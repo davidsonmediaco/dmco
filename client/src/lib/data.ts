@@ -156,7 +156,7 @@ export const portfolioItems: PortfolioItemType[] = [
     imageUrl: imagePath('music', 'A58A0891.jpg'),
     categories: ["music"],
     link: "#",
-    isWide: true
+    isWide: false  // Removed from slideshow as requested
   },
   {
     id: 14,
