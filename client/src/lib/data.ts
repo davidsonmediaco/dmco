@@ -34,10 +34,18 @@ export const portfolioItems: PortfolioItemType[] = [
     categories: ["portraits"],
     link: "#"
   },
+  {
+    id: 4,
+    title: "Portrait Photography",
+    subtitle: "",
+    imageUrl: imagePath('portraits', 'IMG_3587.jpg'),
+    categories: ["portraits"],
+    link: "#"
+  },
   
   // Brands & Business
   {
-    id: 4,
+    id: 20,
     title: "Brand Photography",
     subtitle: "",
     imageUrl: imagePath('brands', 'IMG_9346.jpg'),
@@ -83,10 +91,25 @@ export const portfolioItems: PortfolioItemType[] = [
     imageUrl: imagePath('brands', 'IMG_9433-Enhanced-NR.jpg'),
     categories: ["brands"],
     link: "#"
-  }
+  },
   
   // Live Shows (Music)
-  // Ready for your music images
+  {
+    id: 10,
+    title: "Music Photography",
+    subtitle: "",
+    imageUrl: imagePath('music', 'A58A0261.jpg'),
+    categories: ["music"],
+    link: "#"
+  },
+  {
+    id: 11,
+    title: "Music Photography",
+    subtitle: "",
+    imageUrl: imagePath('music', 'A58A5969.jpg'),
+    categories: ["music"],
+    link: "#"
+  },
   
   // Man's Best Friend (Dogs)
   // Ready for your dog images

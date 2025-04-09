@@ -5,7 +5,7 @@ const HeroSection = () => {
     <section className="hero relative h-screen overflow-hidden">
       <div className="absolute inset-0 w-full h-full bg-black/10 z-10"></div>
       <img 
-        src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071&auto=format&fit=crop" 
+        src="/images/portraits/IMG_3587.jpg" 
         alt="Creative photography by Davidson Media Co" 
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
