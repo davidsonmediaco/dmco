@@ -42,6 +42,14 @@ export const portfolioItems: PortfolioItemType[] = [
     categories: ["portraits"],
     link: "#"
   },
+  {
+    id: 5,
+    title: "Portrait Photography",
+    subtitle: "",
+    imageUrl: imagePath('portraits', 'IMG_1795.jpg'),
+    categories: ["portraits"],
+    link: "#"
+  },
   
   // Brands & Business
   {
@@ -107,6 +115,46 @@ export const portfolioItems: PortfolioItemType[] = [
     title: "Music Photography",
     subtitle: "",
     imageUrl: imagePath('music', 'A58A5969.jpg'),
+    categories: ["music"],
+    link: "#"
+  },
+  {
+    id: 12,
+    title: "Music Photography",
+    subtitle: "",
+    imageUrl: imagePath('music', 'A58A0791.jpg'),
+    categories: ["music"],
+    link: "#"
+  },
+  {
+    id: 13,
+    title: "Music Photography",
+    subtitle: "",
+    imageUrl: imagePath('music', 'A58A0891.jpg'),
+    categories: ["music"],
+    link: "#"
+  },
+  {
+    id: 14,
+    title: "Music Photography",
+    subtitle: "",
+    imageUrl: imagePath('music', 'A58A1148.jpg'),
+    categories: ["music"],
+    link: "#"
+  },
+  {
+    id: 15,
+    title: "Music Photography",
+    subtitle: "",
+    imageUrl: imagePath('music', 'A58A1317.jpg'),
+    categories: ["music"],
+    link: "#"
+  },
+  {
+    id: 16,
+    title: "Music Photography",
+    subtitle: "",
+    imageUrl: imagePath('music', 'IMG_8722 copy.jpg'),
     categories: ["music"],
     link: "#"
   },
