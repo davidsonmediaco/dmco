@@ -4,7 +4,7 @@ import { portfolioItems } from "@/lib/data";
 import { PortfolioItemType } from "@/components/ui/PortfolioItem";
 import ImageWithDimensions from "@/components/ui/ImageWithDimensions";
 import LightboxModal from "@/components/ui/LightboxModal";
-import MasonryGrid from "@/components/ui/MasonryGrid";
+import RowGrid from "@/components/ui/RowGrid";
 
 interface PortfolioGridPageProps {
   category: string;
@@ -96,18 +96,19 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
       
       <section className="py-20">
         <div className="container mx-auto px-4">
-          {/* Masonry grid layout */}
+          {/* Row grid layout with 5 images per row */}
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <MasonryGrid 
+            <RowGrid 
               items={items} 
+              rowSize={5}
               onImageClick={(index) => {
                 setCurrentImageIndex(index);
                 setLightboxOpen(true);
-              }} 
+              }}
             />
           </motion.div>
           

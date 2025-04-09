@@ -59,6 +59,63 @@
   object-fit: cover;
 }
 
+/* Row grid layout (5 items per row) */
+.row-grid-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.row-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  width: 100%;
+}
+
+.grid-item {
+  position: relative;
+  cursor: pointer;
+  background-color: #000;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  aspect-ratio: 1/1;
+}
+
+.grid-item:hover {
+  transform: scale(1.02);
+}
+
+.grid-item-spacer {
+  background-color: transparent;
+}
+
+/* Make the rows responsive */
+@media (max-width: 1280px) {
+  .row-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .row-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .row-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .row-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 /* Carousel Styles */
 .carousel-image-container {
   width: 100%;

@@ -2,11 +2,15 @@ import { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { portfolioItems } from "@/lib/data";
 import { PortfolioItemType } from "@/components/ui/PortfolioItem";
+import RowGrid from "@/components/ui/RowGrid";
+import LightboxModal from "@/components/ui/LightboxModal";
 
 type Category = 'portraits' | 'brands' | 'music' | 'dogs';
 
 const PortfolioSection = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category>('portraits');
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const categories: { id: Category; label: string }[] = [
     { id: 'portraits', label: 'Portraits' },
@@ -18,6 +22,8 @@ const PortfolioSection = () => {
   const filteredItems = portfolioItems.filter(item => 
     item.categories.includes(selectedCategory)
   );
+  
+  const imageUrls = filteredItems.map(item => item.imageUrl);
 
   // Animation variants
   const container: Variants = {
@@ -82,61 +88,32 @@ const PortfolioSection = () => {
           ))}
         </div>
         
-        {/* Portfolio Grid */}
+        {/* Lightbox Modal */}
+        <LightboxModal 
+          isOpen={lightboxOpen}
+          onClose={() => setLightboxOpen(false)}
+          images={imageUrls}
+          currentIndex={currentImageIndex}
+        />
+        
+        {/* Row Grid Layout */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-8"
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
+          className="mb-10"
         >
-          {filteredItems.map((portfolioItem) => (
-            <motion.div
-              key={portfolioItem.id}
-              variants={itemAnimation}
-              className="group"
-              initial="hidden"
-              animate="show"
-              exit="hidden"
-              whileHover={{ y: -10, transition: { duration: 0.3 } }}
-            >
-              <div className="overflow-hidden rounded-lg shadow-xl shadow-primary/10 border border-gray-800/70 bg-gray-900/50 h-full transform transition-all duration-300 group-hover:border-primary/30">
-                <div className="relative">
-                  <div className="overflow-hidden">
-                    <img 
-                      src={portfolioItem.imageUrl} 
-                      alt={portfolioItem.title} 
-                      className="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-300"></div>
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-primary text-black text-xs font-bold py-1 px-3 rounded-full shadow-lg">
-                      {portfolioItem.categories[0].charAt(0).toUpperCase() + portfolioItem.categories[0].slice(1)}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6 border-t border-gray-800/50">
-                  <h3 className="text-xl font-heading text-white tracking-wide mb-2 group-hover:text-primary transition-colors">
-                    {portfolioItem.title}
-                  </h3>
-                  <p className="text-gray-400 mb-5 text-sm">{portfolioItem.subtitle}</p>
-                  <div className="flex justify-between items-center pt-2">
-                    <div className="h-px w-1/4 bg-primary/30"></div>
-                    <a
-                      href={portfolioItem.link}
-                      className="text-primary hover:text-white font-medium transition-colors flex items-center gap-1 text-sm"
-                    >
-                      <span>View Project</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+          <RowGrid 
+            items={filteredItems} 
+            rowSize={5}
+            onImageClick={(index) => {
+              setCurrentImageIndex(index);
+              setLightboxOpen(true);
+            }}
+            viewAllLink={`/${selectedCategory}`}
+            viewAllText={`View All ${selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}`}
+          />
         </motion.div>
       </div>
     </section>
