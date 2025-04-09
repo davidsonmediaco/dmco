@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { portfolioItems } from "@/lib/data";
 import { PortfolioItemType } from "@/components/ui/PortfolioItem";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface PortfolioGridPageProps {
   category: string;
@@ -31,8 +29,6 @@ const getCategoryHeroImage = (category: string): string => {
 
 const PortfolioGridPage = ({ category, title, description }: PortfolioGridPageProps) => {
   const [items, setItems] = useState<PortfolioItemType[]>([]);
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Filter items by category
   useEffect(() => {
@@ -43,64 +39,9 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
   }, [category]);
 
   const heroImageUrl = getCategoryHeroImage(category);
-  
-  // Extract just the image URLs for the lightbox
-  const imageUrls = items.map(item => item.imageUrl);
 
   return (
     <div className="bg-black min-h-screen">
-      {/* Dialog-based Lightbox */}
-      <Dialog 
-        open={lightboxOpen} 
-        onOpenChange={setLightboxOpen}
-      >
-        <DialogContent className="sm:max-w-[90vw] max-h-[90vh] bg-black/95 border-zinc-800 p-0 flex items-center justify-center">
-          {imageUrls.length > 0 && (
-            <div className="relative w-full h-full flex items-center justify-center p-2">
-              <button 
-                className="absolute top-2 right-2 bg-black/50 rounded-full p-2 text-white z-10"
-                onClick={() => setLightboxOpen(false)}
-              >
-                <X className="h-5 w-5" />
-              </button>
-              
-              {imageUrls.length > 1 && (
-                <>
-                  <button 
-                    className="absolute left-4 bg-black/50 rounded-full p-2 text-white"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setCurrentImageIndex(prev => 
-                        prev === 0 ? imageUrls.length - 1 : prev - 1
-                      );
-                    }}
-                  >
-                    <ChevronLeft className="h-6 w-6" />
-                  </button>
-                  
-                  <button 
-                    className="absolute right-4 bg-black/50 rounded-full p-2 text-white"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setCurrentImageIndex(prev => 
-                        prev === imageUrls.length - 1 ? 0 : prev + 1
-                      );
-                    }}
-                  >
-                    <ChevronRight className="h-6 w-6" />
-                  </button>
-                </>
-              )}
-              
-              <img 
-                src={imageUrls[currentImageIndex] || ''} 
-                alt="Enlarged view"
-                className="max-h-[80vh] max-w-full object-contain"
-              />
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
         
       {/* Hero Section with Parallax Effect */}
       <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
@@ -164,13 +105,11 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
                   <div className="relative overflow-hidden w-full h-full bg-transparent">
                     {/* Natural aspect ratio container */}
                     <div className="relative w-full">
-                      <div 
-                        onClick={() => {
-                          console.log("Image clicked", index);
-                          setCurrentImageIndex(index);
-                          setLightboxOpen(true);
-                        }}
-                        className="cursor-pointer w-full h-full"
+                      <a 
+                        href={item.imageUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cursor-pointer w-full h-full block"
                       >
                         <img 
                           src={item.imageUrl} 
@@ -183,7 +122,7 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
                           onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
                           onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1.0)'}
                         />
-                      </div>
+                      </a>
                       
                       {/* Very subtle overlay that appears on hover - just for visual feedback */}
                       <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
