@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { portfolioItems } from "@/lib/data";
 import { PortfolioItemType } from "@/components/ui/PortfolioItem";
+import ImageWithDimensions from "@/components/ui/ImageWithDimensions";
 
 interface PortfolioGridPageProps {
   category: string;
@@ -111,16 +112,9 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
                         rel="noopener noreferrer"
                         className="cursor-pointer w-full h-full block"
                       >
-                        <img 
-                          src={item.imageUrl} 
+                        <ImageWithDimensions 
+                          src={item.imageUrl}
                           alt={item.title}
-                          className="w-full h-auto object-cover transition-transform duration-500"
-                          style={{
-                            transform: `scale(1.0)`,
-                            transition: 'transform 0.5s ease-in-out'
-                          }}
-                          onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
-                          onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1.0)'}
                         />
                       </a>
                       
