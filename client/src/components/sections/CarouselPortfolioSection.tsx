@@ -164,7 +164,9 @@ const CarouselPortfolioSection = () => {
                       <img 
                         src={item.imageUrl} 
                         alt={item.title}
-                        className="w-full h-auto object-contain rounded"
+                        className="w-full h-auto object-contain rounded protected-image"
+                        draggable="false"
+                        onContextMenu={(e) => e.preventDefault()}
                       />
                       
                       {/* Category label */}

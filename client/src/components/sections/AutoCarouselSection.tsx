@@ -161,10 +161,12 @@ const AutoCarouselSection = ({
                       <img 
                         src={item.imageUrl} 
                         alt={item.title}
-                        className="max-w-full max-h-[480px] object-contain rounded shadow-xl"
+                        className="max-w-full max-h-[480px] object-contain rounded shadow-xl protected-image"
                         style={{ 
                           filter: "drop-shadow(0 20px 13px rgb(0 0 0 / 0.08)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))"
                         }}
+                        draggable="false"
+                        onContextMenu={(e) => e.preventDefault()}
                       />
                     </div>
                     

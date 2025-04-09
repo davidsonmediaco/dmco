@@ -85,7 +85,9 @@ const LightboxModal = ({ isOpen, onClose, images, currentIndex = 0 }: LightboxMo
             <img 
               src={images[index]} 
               alt={`Gallery image ${index + 1}`}
-              className="max-h-[calc(95vh-100px)] max-w-[calc(95vw-100px)] object-contain"
+              className="max-h-[calc(95vh-100px)] max-w-[calc(95vw-100px)] object-contain protected-image"
+              draggable="false"
+              onContextMenu={(e) => e.preventDefault()}
             />
           </div>
           
