@@ -100,6 +100,7 @@ img {
   position: relative;
 }
 
+/* Comprehensive protection against any save buttons */
 .image-container::before,
 .image-container::after {
   content: "";
@@ -109,6 +110,42 @@ img {
   right: 0;
   bottom: 0;
   background: transparent;
-  z-index: 999;
+  z-index: 9999 !important;
   pointer-events: none;
+}
+
+/* Hide any buttons on or around images */
+[role="button"][aria-label*="save"],
+[role="button"][aria-label*="Save"],
+[role="button"][aria-label*="Pin"],
+[role="button"][aria-label*="pin"],
+[role="button"][aria-label*="Download"],
+[role="button"][aria-label*="download"],
+[role="button"][aria-label*="Collect"],
+[role="button"][aria-label*="collect"],
+[data-pin-log],
+[data-pin-href],
+.saveButton,
+.save-button,
+.pin-button,
+.pinit-button,
+.pinterest-button,
+.pinterest-save-button,
+.save-it-button,
+.save-image-button,
+.download-button,
+.download-image-button,
+.image-download,
+.image-save {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  z-index: -1 !important;
 }
