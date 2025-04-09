@@ -40,10 +40,12 @@ const ImageWithDimensions = ({ src, alt, className = '' }: ImageWithDimensionsPr
           ref={imgRef}
           src={src}
           alt={alt}
-          className={`w-full h-full object-cover transition-transform duration-500 ${className}`}
+          className={`w-full h-full transition-transform duration-500 ${className}`}
           style={{
             transform: isHovered ? 'scale(1.02)' : 'scale(1.0)',
-            transition: 'transform 0.5s ease-in-out'
+            transition: 'transform 0.5s ease-in-out',
+            objectFit: 'contain',
+            backgroundColor: '#1a1a1a'
           }}
         />
       </div>

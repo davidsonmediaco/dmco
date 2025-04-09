@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { portfolioItems } from "@/lib/data";
 import { PortfolioItemType } from "@/components/ui/PortfolioItem";
 import ImageWithDimensions from "@/components/ui/ImageWithDimensions";
+import LightboxModal from "@/components/ui/LightboxModal";
 
 interface PortfolioGridPageProps {
   category: string;
@@ -30,6 +31,8 @@ const getCategoryHeroImage = (category: string): string => {
 
 const PortfolioGridPage = ({ category, title, description }: PortfolioGridPageProps) => {
   const [items, setItems] = useState<PortfolioItemType[]>([]);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Filter items by category
   useEffect(() => {
@@ -40,9 +43,19 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
   }, [category]);
 
   const heroImageUrl = getCategoryHeroImage(category);
+  
+  // Extract image URLs for the lightbox
+  const imageUrls = items.map(item => item.imageUrl);
 
   return (
     <div className="bg-black min-h-screen">
+      {/* Lightbox Modal */}
+      <LightboxModal 
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        images={imageUrls}
+        currentIndex={currentImageIndex}
+      />
         
       {/* Hero Section with Parallax Effect */}
       <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
@@ -101,10 +114,11 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
                   <div className="relative overflow-hidden w-full h-full">
                     {/* Each item has the same container size for better alignment */}
                     <div className="relative w-full h-full">
-                      <a 
-                        href={item.imageUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <div 
+                        onClick={() => {
+                          setCurrentImageIndex(index);
+                          setLightboxOpen(true);
+                        }}
                         className="cursor-pointer w-full h-full block"
                       >
                         <div className="w-full h-full">
@@ -113,7 +127,7 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
                             alt={item.title}
                           />
                         </div>
-                      </a>
+                      </div>
                       
                       {/* Very subtle overlay that appears on hover - just for visual feedback */}
                       <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

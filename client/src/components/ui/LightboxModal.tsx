@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useCallback } from 'react';
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 interface LightboxModalProps {
   isOpen: boolean;
@@ -11,123 +11,99 @@ interface LightboxModalProps {
 
 const LightboxModal = ({ isOpen, onClose, images, currentIndex = 0 }: LightboxModalProps) => {
   const [index, setIndex] = useState(currentIndex);
-
-  // Reset index when modal opens
+  
+  // Reset index when currentIndex prop changes
   useEffect(() => {
-    if (isOpen) {
-      setIndex(currentIndex);
-    }
-  }, [isOpen, currentIndex]);
-
+    setIndex(currentIndex);
+  }, [currentIndex]);
+  
+  const handlePrevious = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+  }, [images.length]);
+  
+  const handleNext = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+  }, [images.length]);
+  
   // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isOpen) return;
       
-      if (e.key === 'Escape') {
-        onClose();
-      } else if (e.key === 'ArrowLeft') {
-        navigatePrev();
-      } else if (e.key === 'ArrowRight') {
-        navigateNext();
+      switch (e.key) {
+        case 'ArrowLeft':
+          setIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+          break;
+        case 'ArrowRight':
+          setIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+          break;
+        case 'Escape':
+          onClose();
+          break;
+        default:
+          break;
       }
     };
-
-    window.addEventListener('keydown', handleKeyDown);
     
-    // Lock body scroll when lightbox is open
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    }
+    window.addEventListener('keydown', handleKeyDown);
     
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = '';
     };
-  }, [isOpen, index, images.length]);
-
-  // Navigation functions
-  const navigatePrev = () => {
-    if (images.length <= 1) return;
-    setIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
-  };
-
-  const navigateNext = () => {
-    if (images.length <= 1) return;
-    setIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-  };
-
-  if (!isOpen) return null;
-
+  }, [isOpen, images.length, onClose]);
+  
+  // Show image count
+  const imageCount = `${index + 1} / ${images.length}`;
+  
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
-          onClick={onClose}
-        >
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-black/95 border-zinc-800 flex items-center justify-center">
+        <div className="relative w-full h-full flex flex-col items-center justify-center">
           {/* Close button */}
-          <button
-            className="absolute top-4 right-4 z-10 p-2 text-white bg-black/50 rounded-full hover:bg-black/70 transition-colors"
+          <button 
             onClick={onClose}
+            className="absolute top-2 right-2 z-50 p-2 bg-black/70 rounded-full text-white hover:bg-black/90 transition-colors"
           >
             <X size={24} />
           </button>
-
-          {/* Navigation controls */}
-          {images.length > 1 && (
-            <>
-              <button
-                className="absolute left-4 z-10 p-2 text-white bg-black/50 rounded-full hover:bg-black/70 transition-colors"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  navigatePrev();
-                }}
-              >
-                <ChevronLeft size={24} />
-              </button>
-              
-              <button
-                className="absolute right-4 z-10 p-2 text-white bg-black/50 rounded-full hover:bg-black/70 transition-colors"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  navigateNext();
-                }}
-              >
-                <ChevronRight size={24} />
-              </button>
-            </>
-          )}
-
+          
+          {/* Image counter */}
+          <div className="absolute top-4 left-4 text-white/80 text-sm bg-black/60 px-2 py-1 rounded-md">
+            {imageCount}
+          </div>
+          
           {/* Image container */}
-          <div 
-            className="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center" 
-            onClick={(e) => e.stopPropagation()}
-          >
-            <motion.img
-              key={index}
-              src={images[index]}
-              alt="Enlarged view"
-              className="max-w-full max-h-full object-contain"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
+          <div className="w-full h-full flex items-center justify-center p-8">
+            <img 
+              src={images[index]} 
+              alt={`Gallery image ${index + 1}`}
+              className="max-h-[calc(95vh-100px)] max-w-[calc(95vw-100px)] object-contain"
             />
           </div>
           
-          {/* Image counter */}
+          {/* Navigation arrows - only show if there are multiple images */}
           {images.length > 1 && (
-            <div className="absolute bottom-4 left-0 right-0 text-center text-white">
-              {index + 1} / {images.length}
-            </div>
+            <>
+              <button 
+                onClick={handlePrevious}
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 p-3 bg-black/70 rounded-full text-white hover:bg-black/90 transition-colors"
+              >
+                <ChevronLeft size={28} />
+              </button>
+              
+              <button 
+                onClick={handleNext}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 p-3 bg-black/70 rounded-full text-white hover:bg-black/90 transition-colors"
+              >
+                <ChevronRight size={28} />
+              </button>
+            </>
           )}
-        </motion.div>
-      )}
-    </AnimatePresence>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 };
 
