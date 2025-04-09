@@ -16,7 +16,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "",
     imageUrl: imagePath('portraits', 'GAILJPH.jpg'),
     categories: ["portraits"],
-    link: "#"
+    link: "#",
+    isWide: false
   },
   {
     id: 2,
@@ -24,7 +25,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "",
     imageUrl: imagePath('portraits', 'IMG_1041.jpg'),
     categories: ["portraits"],
-    link: "#"
+    link: "#",
+    isWide: false
   },
   {
     id: 3,
@@ -32,7 +34,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "",
     imageUrl: imagePath('portraits', 'laura 4.png'),
     categories: ["portraits"],
-    link: "#"
+    link: "#",
+    isWide: false
   },
   {
     id: 4,
@@ -40,7 +43,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "",
     imageUrl: imagePath('portraits', 'IMG_3587.jpg'),
     categories: ["portraits"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   {
     id: 5,
@@ -48,7 +52,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "",
     imageUrl: imagePath('portraits', 'IMG_4637.jpg'),
     categories: ["portraits"],
-    link: "#"
+    link: "#",
+    isWide: false
   },
   {
     id: 6,
@@ -56,7 +61,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "",
     imageUrl: imagePath('portraits', 'Danny-headshot.jpg'),
     categories: ["portraits"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   
   // Brands & Business
@@ -66,47 +72,53 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "",
     imageUrl: imagePath('brands', 'IMG_9346.jpg'),
     categories: ["brands"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   {
-    id: 5,
+    id: 21,
     title: "Brand Photography",
     subtitle: "",
     imageUrl: imagePath('brands', 'IMG_9352.jpg'),
     categories: ["brands"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   {
-    id: 6,
+    id: 22,
     title: "Brand Photography",
     subtitle: "",
     imageUrl: imagePath('brands', 'IMG_9360.jpg'),
     categories: ["brands"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   {
-    id: 7,
+    id: 23,
     title: "Brand Photography",
     subtitle: "",
     imageUrl: imagePath('brands', 'IMG_9382-Enhanced-NR.jpg'),
     categories: ["brands"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   {
-    id: 8,
+    id: 24,
     title: "Brand Photography",
     subtitle: "",
     imageUrl: imagePath('brands', 'IMG_9423.jpg'),
     categories: ["brands"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   {
-    id: 9,
+    id: 25,
     title: "Brand Photography",
     subtitle: "",
     imageUrl: imagePath('brands', 'IMG_9433-Enhanced-NR.jpg'),
     categories: ["brands"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   
   // Live Shows (Music)
@@ -116,7 +128,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "",
     imageUrl: imagePath('music', 'A58A0261.jpg'),
     categories: ["music"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   {
     id: 11,
@@ -124,7 +137,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "",
     imageUrl: imagePath('music', 'A58A5969.jpg'),
     categories: ["music"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   {
     id: 12,
@@ -132,7 +146,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "",
     imageUrl: imagePath('music', 'A58A0791.jpg'),
     categories: ["music"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   {
     id: 13,
@@ -140,7 +155,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "",
     imageUrl: imagePath('music', 'A58A0891.jpg'),
     categories: ["music"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   {
     id: 14,
@@ -148,7 +164,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "",
     imageUrl: imagePath('music', 'A58A1148.jpg'),
     categories: ["music"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   {
     id: 15,
@@ -156,7 +173,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "",
     imageUrl: imagePath('music', 'A58A1317.jpg'),
     categories: ["music"],
-    link: "#"
+    link: "#",
+    isWide: false
   },
   {
     id: 16,
@@ -164,7 +182,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "",
     imageUrl: imagePath('music', 'IMG_8722 copy.jpg'),
     categories: ["music"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   {
     id: 17,
@@ -172,7 +191,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "",
     imageUrl: imagePath('music', 'A58A0203.jpg'),
     categories: ["music"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   {
     id: 18,
@@ -180,7 +200,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "",
     imageUrl: imagePath('music', 'A58A1043.jpg'),
     categories: ["music"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   
   // Man's Best Friend (Dogs)
@@ -190,7 +211,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "Man's Best Friend",
     imageUrl: imagePath('dogs', 'IMG_2813.jpg'),
     categories: ["dogs"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   {
     id: 31,
@@ -198,7 +220,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "Man's Best Friend",
     imageUrl: imagePath('dogs', 'IMG_9756.jpg'),
     categories: ["dogs"],
-    link: "#"
+    link: "#",
+    isWide: true
   },
   {
     id: 32,
@@ -206,7 +229,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "Man's Best Friend",
     imageUrl: imagePath('dogs', 'IMG_9848.jpg'),
     categories: ["dogs"],
-    link: "#"
+    link: "#",
+    isWide: false
   },
   
   // Sports
@@ -216,7 +240,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "Action Shots",
     imageUrl: imagePath('sports', '_MG_5681.jpg'),
     categories: ["sports"],
-    link: "#"
+    link: "#",
+    isWide: false
   },
   {
     id: 41,
@@ -224,7 +249,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "Action Shots",
     imageUrl: imagePath('sports', '_MG_5692.jpg'),
     categories: ["sports"],
-    link: "#"
+    link: "#",
+    isWide: false
   },
   {
     id: 42,
@@ -232,7 +258,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "Action Shots",
     imageUrl: imagePath('sports', '_MG_5700.jpg'),
     categories: ["sports"],
-    link: "#"
+    link: "#",
+    isWide: false
   },
   {
     id: 43,
@@ -240,7 +267,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "Action Shots",
     imageUrl: imagePath('sports', '_MG_5754.jpg'),
     categories: ["sports"],
-    link: "#"
+    link: "#",
+    isWide: false
   },
   {
     id: 44,
@@ -248,7 +276,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "Action Shots",
     imageUrl: imagePath('sports', '_MG_5763.jpg'),
     categories: ["sports"],
-    link: "#"
+    link: "#",
+    isWide: false
   },
   {
     id: 45,
@@ -256,7 +285,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "Action Shots",
     imageUrl: imagePath('sports', '_MG_5767.jpg'),
     categories: ["sports"],
-    link: "#"
+    link: "#",
+    isWide: false
   },
   {
     id: 46,
@@ -264,7 +294,8 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "Action Shots",
     imageUrl: imagePath('sports', '_MG_5774.jpg'),
     categories: ["sports"],
-    link: "#"
+    link: "#",
+    isWide: false
   },
   {
     id: 47,
@@ -272,6 +303,7 @@ export const portfolioItems: PortfolioItemType[] = [
     subtitle: "Action Shots",
     imageUrl: imagePath('sports', 'IMG_2364.jpg'),
     categories: ["sports"],
-    link: "#"
+    link: "#",
+    isWide: false
   }
 ];

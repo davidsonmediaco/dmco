@@ -7,6 +7,7 @@ export interface PortfolioItemType {
   imageUrl: string;
   categories: string[];
   link: string;
+  isWide?: boolean;
 }
 
 interface PortfolioItemProps {
