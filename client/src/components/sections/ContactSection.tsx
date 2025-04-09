@@ -75,7 +75,7 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-heading text-white">Email</h3>
-                    <p className="text-gray-400">contact@davidsonmedia.co</p>
+                    <p className="text-gray-400">davidsonmediaco@gmail.com</p>
                   </div>
                 </div>
                 
@@ -85,7 +85,7 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-heading text-white">Phone</h3>
-                    <p className="text-gray-400">(555) 123-4567</p>
+                    <p className="text-gray-400">(646)-303-0973</p>
                   </div>
                 </div>
                 
@@ -95,7 +95,7 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-heading text-white">Location</h3>
-                    <p className="text-gray-400">Seattle, WA</p>
+                    <p className="text-gray-400">Bernardsville, NJ</p>
                   </div>
                 </div>
               </div>
