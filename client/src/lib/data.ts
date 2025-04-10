@@ -55,15 +55,7 @@ export const portfolioItems: PortfolioItemType[] = [
     link: "#",
     isWide: true
   },
-  {
-    id: 5,
-    title: "Portrait Photography",
-    subtitle: "",
-    imageUrl: imagePath('portraits', 'IMG_4637.jpg'),
-    categories: ["portraits"],
-    link: "#",
-    isWide: false
-  },
+  
   {
     id: 6,
     title: "Portrait Photography",
