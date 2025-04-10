@@ -9,6 +9,62 @@ const imagePath = (category: string, filename: string) => `/images/${category}/$
 // imageUrl: imagePath('portraits', 'your-filename.jpg')
 
 export const portfolioItems: PortfolioItemType[] = [
+  // BTS Photography
+  {
+    id: 60,
+    title: "BTS Photography",
+    subtitle: "Jersey Girl Podcast",
+    imageUrl: imagePath('bts', 'jersey-girl-pod-mondlock-moments-bts-01.jpg'),
+    categories: ["bts"],
+    link: "#",
+    isWide: true
+  },
+  {
+    id: 61,
+    title: "BTS Photography",
+    subtitle: "Behind the Scenes",
+    imageUrl: imagePath('bts', 'jersey-girl-pod-mondlock-moments-bts-05.jpg'),
+    categories: ["bts"],
+    link: "#",
+    isWide: true
+  },
+  {
+    id: 62,
+    title: "BTS Photography",
+    subtitle: "Creative Process",
+    imageUrl: imagePath('bts', 'jersey-girl-pod-mondlock-moments-bts-09.jpg'),
+    categories: ["bts"],
+    link: "#",
+    isWide: true
+  },
+  {
+    id: 63,
+    title: "BTS Photography",
+    subtitle: "Studio Setup",
+    imageUrl: imagePath('bts', 'jersey-girl-pod-mondlock-moments-bts-10.jpg'),
+    categories: ["bts"],
+    link: "#",
+    isWide: true
+  },
+  {
+    id: 64,
+    title: "BTS Photography",
+    subtitle: "Production Team",
+    imageUrl: imagePath('bts', 'jersey-girl-pod-mondlock-moments-bts-11.jpg'),
+    categories: ["bts"],
+    link: "#",
+    isWide: true
+  },
+  {
+    id: 65,
+    title: "BTS Photography",
+    subtitle: "Equipment Setup",
+    imageUrl: imagePath('bts', 'jersey-girl-pod-mondlock-moments-bts-12.jpg'),
+    categories: ["bts"],
+    link: "#",
+    isWide: true
+  },
+  
   // Portraits
   {
     id: 1,

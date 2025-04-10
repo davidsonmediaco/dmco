@@ -52,12 +52,14 @@ const CategoryGridSection = () => {
         {/* Grid layout for 6 categories (2 columns x 3 rows) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {categories.map((category, index) => {
-            // For portraits and brands categories, use the specified images
+            // For portraits, brands, and BTS categories, use the specified images
             let imageUrl = '';
             if (category.id === 'portraits') {
               imageUrl = '/images/portraits/gail-water-headshot.jpg';
             } else if (category.id === 'brands') {
               imageUrl = '/images/brands/barrister-coffee-house-coffee-pour.jpg';
+            } else if (category.id === 'bts') {
+              imageUrl = '/images/bts/jersey-girl-pod-mondlock-moments-bts-01.jpg';
             } else {
               const image = categoryImages[category.id];
               imageUrl = image ? image.imageUrl : 'https://via.placeholder.com/800x500/111111/333333';
