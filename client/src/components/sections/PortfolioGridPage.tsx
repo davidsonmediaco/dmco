@@ -6,6 +6,7 @@ import { PortfolioItemType } from "@/components/ui/PortfolioItem";
 import ImageWithDimensions from "@/components/ui/ImageWithDimensions";
 import LightboxModal from "@/components/ui/LightboxModal";
 import MasonryGrid from "@/components/ui/MasonryGrid";
+import CarouselMasonryGrid from "@/components/ui/CarouselMasonryGrid";
 
 interface PortfolioGridPageProps {
   category: string;
@@ -97,6 +98,24 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
       
       <section className="py-20">
         <div className="container mx-auto px-4">
+          {/* Carousel Masonry Row */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mb-16"
+          >
+            <h2 className="text-3xl font-heading text-white mb-6 tracking-wide">Explore {title}</h2>
+            <CarouselMasonryGrid 
+              items={items} 
+              itemsPerRow={4}
+              onImageClick={(index: number) => {
+                setCurrentImageIndex(index);
+                setLightboxOpen(true);
+              }}
+            />
+          </motion.div>
+          
           {/* Masonry grid layout with 3 columns */}
           <motion.div 
             initial={{ opacity: 0 }}
@@ -104,6 +123,7 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
             transition={{ duration: 0.5, delay: 0.3 }}
             className="pb-4"
           >
+            <h2 className="text-3xl font-heading text-white mb-6 tracking-wide">Complete Collection</h2>
             <MasonryGrid 
               items={items} 
               columns={3}
@@ -123,7 +143,7 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
           >
             <Link 
               to="/" 
-              className="px-8 py-3 rounded-md bg-primary hover:bg-primary/90 text-black font-medium text-base transition-colors duration-300 inline-flex items-center shadow-md"
+              className="px-8 py-3 rounded-md bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-black font-medium text-base transition-colors duration-300 inline-flex items-center shadow-md"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
                 <path d="m15 18-6-6 6-6"/>
