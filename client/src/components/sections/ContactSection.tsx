@@ -87,7 +87,7 @@ ${data.message}
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
-                    <Mail className="h-6 w-6 text-primary" />
+                    <Mail className="h-6 w-6" style={{ color: "#D4AF37" }} />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-heading text-white">Email</h3>
@@ -97,7 +97,7 @@ ${data.message}
                 
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
-                    <Phone className="h-6 w-6 text-primary" />
+                    <Phone className="h-6 w-6" style={{ color: "#D4AF37" }} />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-heading text-white">Phone</h3>
@@ -107,7 +107,7 @@ ${data.message}
                 
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-primary" />
+                    <MapPin className="h-6 w-6" style={{ color: "#D4AF37" }} />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-heading text-white">Location</h3>
