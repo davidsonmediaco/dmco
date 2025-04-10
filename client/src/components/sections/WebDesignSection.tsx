@@ -88,7 +88,7 @@ const WebDesignSection = () => {
             </div>
             
             <motion.button 
-              className="px-8 py-3 bg-primary text-black rounded-full font-bold hover:bg-primary/90 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+              className="px-8 py-3 bg-[#D4AF37] text-black rounded-full font-bold hover:bg-[#D4AF37]/90 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
               onClick={scrollToContact}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

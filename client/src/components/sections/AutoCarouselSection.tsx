@@ -113,7 +113,7 @@ const AutoCarouselSection = ({
           <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20">
             <button 
               onClick={goToPrev}
-              className="p-3 rounded-full bg-black/50 hover:bg-primary/80 text-white transition-colors"
+              className="p-3 rounded-full bg-black/50 hover:bg-[#D4AF37] text-white hover:text-black transition-colors"
               aria-label="Previous slide"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -123,7 +123,7 @@ const AutoCarouselSection = ({
           <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20">
             <button 
               onClick={goToNext}
-              className="p-3 rounded-full bg-black/50 hover:bg-primary/80 text-white transition-colors"
+              className="p-3 rounded-full bg-black/50 hover:bg-[#D4AF37] text-white hover:text-black transition-colors"
               aria-label="Next slide"
             >
               <ChevronRight className="w-5 h-5" />
@@ -136,8 +136,8 @@ const AutoCarouselSection = ({
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  index === currentIndex ? 'bg-primary' : 'bg-zinc-600'
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  index === currentIndex ? 'bg-[#D4AF37]' : 'bg-zinc-600 hover:bg-zinc-400'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -183,9 +183,9 @@ const AutoCarouselSection = ({
         
         <div className="mt-8 flex justify-center">
           <Link to={viewMoreLink}>
-            <Button className="bg-primary hover:bg-primary/80 text-black font-bold text-lg px-10 py-3 rounded-md shadow-lg">
-              View All Work <ExternalLink className="ml-2 w-5 h-5" />
-            </Button>
+            <button className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-black font-bold text-lg px-10 py-3 rounded-md shadow-lg">
+              View All Work <ExternalLink className="ml-1 w-5 h-5" />
+            </button>
           </Link>
         </div>
       </div>
