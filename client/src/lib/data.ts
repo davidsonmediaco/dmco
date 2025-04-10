@@ -32,6 +32,17 @@ export const portfolioItems: PortfolioItemType[] = [
     id: 3,
     title: "Portrait Photography",
     subtitle: "Studio Portraits",
+
+  {
+    id: 7,
+    title: "Portrait Photography",
+    subtitle: "Unique Portrait",
+    imageUrl: imagePath('portraits', 'monte-idol-headshot.jpg'),
+    categories: ["portraits"],
+    link: "#",
+    isWide: true
+  },
+
     imageUrl: imagePath('portraits', 'laura 4.png'),
     categories: ["portraits"],
     link: "#",
@@ -41,7 +52,7 @@ export const portfolioItems: PortfolioItemType[] = [
     id: 4,
     title: "Portrait Photography",
     subtitle: "",
-    imageUrl: imagePath('portraits', 'IMG_3587.jpg'),
+    imageUrl: imagePath('portraits', 'gail-water-headshot.jpg'),
     categories: ["portraits"],
     link: "#",
     isWide: true
