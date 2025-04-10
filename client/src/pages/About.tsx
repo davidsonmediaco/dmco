@@ -27,7 +27,7 @@ const AboutPage = () => {
                 >
                   <div className="rounded-xl overflow-hidden shadow-xl mb-6">
                     <img 
-                      src="/images/portraits/Danny-headshot.jpg" 
+                      src="/images/about/davidson-media-headshot.jpg" 
                       alt="Justin Davidson" 
                       className="w-full h-auto object-cover"
                       onContextMenu={(e) => e.preventDefault()}
