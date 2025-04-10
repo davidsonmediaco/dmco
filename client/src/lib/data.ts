@@ -241,7 +241,7 @@ export const portfolioItems: PortfolioItemType[] = [
     imageUrl: imagePath('sports', '_MG_5681.jpg'),
     categories: ["sports"],
     link: "#",
-    isWide: false
+    isWide: true
   },
   {
     id: 41,
@@ -250,7 +250,7 @@ export const portfolioItems: PortfolioItemType[] = [
     imageUrl: imagePath('sports', '_MG_5692.jpg'),
     categories: ["sports"],
     link: "#",
-    isWide: false
+    isWide: true
   },
   {
     id: 42,
@@ -259,7 +259,7 @@ export const portfolioItems: PortfolioItemType[] = [
     imageUrl: imagePath('sports', '_MG_5700.jpg'),
     categories: ["sports"],
     link: "#",
-    isWide: false
+    isWide: true
   },
   {
     id: 43,
@@ -268,7 +268,7 @@ export const portfolioItems: PortfolioItemType[] = [
     imageUrl: imagePath('sports', '_MG_5754.jpg'),
     categories: ["sports"],
     link: "#",
-    isWide: false
+    isWide: true
   },
   {
     id: 44,
@@ -277,7 +277,7 @@ export const portfolioItems: PortfolioItemType[] = [
     imageUrl: imagePath('sports', '_MG_5763.jpg'),
     categories: ["sports"],
     link: "#",
-    isWide: false
+    isWide: true
   },
   {
     id: 45,
@@ -286,7 +286,7 @@ export const portfolioItems: PortfolioItemType[] = [
     imageUrl: imagePath('sports', '_MG_5767.jpg'),
     categories: ["sports"],
     link: "#",
-    isWide: false
+    isWide: true
   },
   {
     id: 46,
@@ -295,7 +295,7 @@ export const portfolioItems: PortfolioItemType[] = [
     imageUrl: imagePath('sports', '_MG_5774.jpg'),
     categories: ["sports"],
     link: "#",
-    isWide: false
+    isWide: true
   },
   {
     id: 47,
@@ -304,6 +304,6 @@ export const portfolioItems: PortfolioItemType[] = [
     imageUrl: imagePath('sports', 'IMG_2364.jpg'),
     categories: ["sports"],
     link: "#",
-    isWide: false
+    isWide: true
   }
 ];

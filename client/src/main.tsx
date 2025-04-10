@@ -117,8 +117,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 1000);
 });
 
-import { createRoot } from 'react-dom/client';
-import './index.css';
-import App from './App';
-
+// Render the application
 createRoot(document.getElementById("root")!).render(<App />);

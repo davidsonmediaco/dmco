@@ -108,7 +108,7 @@ const AutoCarouselSection = ({
           </div>
         </div>
         
-        <div className="relative bg-black border border-zinc-800 rounded-lg overflow-hidden flex flex-col" style={{ height: "600px", maxWidth: "1200px", margin: "0 auto" }}>
+        <div className="relative bg-black border border-zinc-800 rounded-lg overflow-hidden flex flex-col" style={{ height: "500px", maxWidth: "1400px", margin: "0 auto" }}>
           {/* Navigation controls */}
           <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20">
             <button 
@@ -163,7 +163,7 @@ const AutoCarouselSection = ({
                         <img 
                           src={item.imageUrl} 
                           alt={item.title}
-                          className="max-w-full max-h-[480px] object-contain rounded shadow-xl protected-image"
+                          className="max-w-full max-h-[400px] object-contain rounded shadow-xl protected-image"
                           style={{ 
                             filter: "drop-shadow(0 20px 13px rgb(0 0 0 / 0.08)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))"
                           }}
@@ -173,17 +173,7 @@ const AutoCarouselSection = ({
                       </div>
                     </div>
                     
-                    {/* Caption area without overlay */}
-                    <div className="px-4 py-3 w-full text-center">
-                      <h3 className="text-xl md:text-2xl font-heading text-white">
-                        {item.title}
-                      </h3>
-                      {item.subtitle && (
-                        <p className="text-sm md:text-base text-zinc-400 mt-1">
-                          {item.subtitle}
-                        </p>
-                      )}
-                    </div>
+                    {/* Caption area - removed for cleaner layout */}
                   </div>
                 </div>
               </motion.div>
@@ -191,10 +181,10 @@ const AutoCarouselSection = ({
           </div>
         </div>
         
-        <div className="mt-6 flex justify-center">
+        <div className="mt-8 flex justify-center">
           <Link to={viewMoreLink}>
-            <Button className="bg-primary hover:bg-primary/90 text-black font-medium text-base px-8 py-3 rounded-md shadow-md">
-              View All Work <ExternalLink className="ml-2 w-4 h-4" />
+            <Button className="bg-primary hover:bg-primary/80 text-black font-medium text-lg px-10 py-3 rounded-md shadow-lg border-2 border-primary/20">
+              View All Work <ExternalLink className="ml-2 w-5 h-5" />
             </Button>
           </Link>
         </div>
