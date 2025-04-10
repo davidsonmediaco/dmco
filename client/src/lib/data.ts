@@ -13,29 +13,29 @@ export const portfolioItems: PortfolioItemType[] = [
   {
     id: 1,
     title: "Portrait Photography",
-    subtitle: "",
+    subtitle: "Professional Headshots",
     imageUrl: imagePath('portraits', 'GAILJPH.jpg'),
     categories: ["portraits"],
     link: "#",
-    isWide: false
+    isWide: true
   },
   {
     id: 2,
     title: "Portrait Photography",
-    subtitle: "",
+    subtitle: "Outdoor Sessions",
     imageUrl: imagePath('portraits', 'IMG_1041.jpg'),
     categories: ["portraits"],
     link: "#",
-    isWide: false
+    isWide: true
   },
   {
     id: 3,
     title: "Portrait Photography",
-    subtitle: "",
+    subtitle: "Studio Portraits",
     imageUrl: imagePath('portraits', 'laura 4.png'),
     categories: ["portraits"],
     link: "#",
-    isWide: false
+    isWide: true
   },
   {
     id: 4,

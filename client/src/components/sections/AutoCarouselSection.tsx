@@ -183,7 +183,7 @@ const AutoCarouselSection = ({
         
         <div className="mt-8 flex justify-center">
           <Link to={viewMoreLink}>
-            <Button className="bg-primary hover:bg-primary/80 text-black font-medium text-lg px-10 py-3 rounded-md shadow-lg border-2 border-primary/20">
+            <Button className="bg-primary hover:bg-primary/80 text-black font-bold text-lg px-10 py-3 rounded-md shadow-lg">
               View All Work <ExternalLink className="ml-2 w-5 h-5" />
             </Button>
           </Link>

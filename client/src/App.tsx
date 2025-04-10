@@ -9,6 +9,7 @@ import Music from "@/pages/Music";
 import Brands from "@/pages/Brands";
 import Dogs from "@/pages/Dogs";
 import Sports from "@/pages/Sports";
+import About from "@/pages/About";
 import Admin from "@/pages/Admin";
 
 function Router() {
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/brands" component={Brands} />
       <Route path="/dogs" component={Dogs} />
       <Route path="/sports" component={Sports} />
+      <Route path="/about" component={About} />
       <Route path="/admin" component={Admin} />
       <Route component={NotFound} />
     </Switch>
