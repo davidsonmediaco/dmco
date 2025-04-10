@@ -111,12 +111,20 @@ export const portfolioItems: PortfolioItemType[] = [
     link: "#",
     isWide: true
   },
-  
   {
     id: 6,
     title: "Portrait Photography",
     subtitle: "",
     imageUrl: imagePath('portraits', 'Danny-headshot.jpg'),
+    categories: ["portraits"],
+    link: "#",
+    isWide: true
+  },
+  {
+    id: 8,
+    title: "Portrait Photography",
+    subtitle: "Environmental Portrait",
+    imageUrl: imagePath('portraits', 'IMG_2364.jpg'),
     categories: ["portraits"],
     link: "#",
     isWide: true
@@ -350,15 +358,6 @@ export const portfolioItems: PortfolioItemType[] = [
     title: "Sports Photography",
     subtitle: "Action Shots",
     imageUrl: imagePath('sports', '_MG_5774.jpg'),
-    categories: ["sports"],
-    link: "#",
-    isWide: true
-  },
-  {
-    id: 47,
-    title: "Sports Photography",
-    subtitle: "Action Shots",
-    imageUrl: imagePath('sports', 'IMG_2364.jpg'),
     categories: ["sports"],
     link: "#",
     isWide: true
