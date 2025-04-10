@@ -88,12 +88,12 @@ const PortfolioGrid = () => {
                   </div>
                 </div>
                 <div className="p-6 border-t border-gray-800/50">
-                  <h3 className="text-xl font-heading text-white tracking-wide mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-heading text-white tracking-wide mb-2 group-hover:text-[#D4AF37] transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-gray-400 mb-5 text-sm">{item.subtitle}</p>
                   <div className="flex justify-between items-center pt-2">
-                    <div className="h-px w-1/4 bg-primary/30"></div>
+                    <div className="h-px w-1/4 bg-[#D4AF37]/30"></div>
                     <a
                       href={item.link}
                       className="text-[#D4AF37] hover:text-white font-medium transition-colors flex items-center gap-1 text-sm"

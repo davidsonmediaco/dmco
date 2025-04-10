@@ -76,8 +76,8 @@ const WebDesignSection = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.2 }}
                 >
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-1">
-                    <Check className="h-4 w-4 text-primary" />
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#D4AF37]/20 flex items-center justify-center mt-1">
+                    <Check className="h-4 w-4 text-[#D4AF37]" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-medium text-white">{benefit.title}</h3>
