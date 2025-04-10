@@ -65,27 +65,29 @@ const AboutPage = () => {
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
                   <div className="prose prose-lg prose-invert max-w-none">
-                    <h2 className="text-3xl font-heading text-primary mb-6">The Story Behind Davidson Media Co.</h2>
+                    <h2 className="text-3xl font-heading text-white mb-6">The Story Behind Davidson Media Co.</h2>
                     
                     <p className="mb-6">
-                      Welcome to Davidson Media Co. Founded on a passion for visual storytelling, I've built this business to help individuals and companies communicate their unique stories through compelling imagery and strategic digital presence.
+                      I grew up in the greatest city in the world, New York, where I quickly realized that photography is everywhere. My first camera was a little blue Canon PowerShot, and I brought it with me everywhere I went. When you live in a place like NYC, there's always something worth capturing.
                     </p>
                     
                     <p className="mb-6">
-                      With experience spanning portrait photography, brand development, web design, and social media strategy, I bring a holistic approach to helping clients establish and enhance their visual identity.
-                    </p>
-                    
-                    <h3 className="text-2xl font-heading mt-10 mb-4">My Approach</h3>
-                    
-                    <p className="mb-6">
-                      Every project begins with understanding your specific needs and goals. Whether capturing the perfect portrait that showcases your personality, developing a website that converts visitors to customers, or creating a consistent visual brand across all platforms, my focus is always on delivering results that exceed expectations.
+                      In 2010, my family moved to New Jersey, and the change from the fast pace of the city to a quiet town was a tough adjustment. But on my first day at my new high school, I met a photo teacher who helped me discover that photography wasn't just something I liked, it was something I loved. I've been hooked ever since.
                     </p>
                     
                     <p className="mb-6">
-                      I believe in building lasting relationships with clients through transparency, communication, and exceptional service. My success is measured by your satisfaction and the tangible results our work together achieves.
+                      A big part of my journey has always been our dogs. In 2011 we got Charlie, who had the kind of personality that just begged to be photographed. Then came Patrick in 2015, the sweetest soul I've ever met. He adored Charlie, and their bond was something special. After we said goodbye to Charlie in 2022, we were blessed with Louie, a playful little pup who brought so much light back into our lives and a lot of great photo opportunities.
                     </p>
                     
-                    <h3 className="text-2xl font-heading mt-10 mb-4">Areas of Expertise</h3>
+                    <p className="mb-6">
+                      My dogs have been a huge inspiration behind the work I do. On days when things felt heavy, I'd grab my camera and go outside to take pictures of them. It gave me peace, joy, and purpose.
+                    </p>
+                    
+                    <p className="mb-6">
+                      More than anything, I want to show you the beauty in everyday moments. Photography is about preserving what matters and creating memories that last. To me, being a photographer isn't just about holding a camera, it's about helping people remember what really matters.
+                    </p>
+                    
+                    <h3 className="text-2xl font-heading mt-10 mb-4 text-white">Areas of Expertise</h3>
                     
                     <ul className="list-disc pl-5 mb-6 space-y-2">
                       <li>Portrait Photography (Professional, Family, Lifestyle)</li>
