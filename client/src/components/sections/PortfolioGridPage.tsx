@@ -98,24 +98,6 @@ const PortfolioGridPage = ({ category, title, description }: PortfolioGridPagePr
       
       <section className="py-20">
         <div className="container mx-auto px-4">
-          {/* Carousel Masonry Row */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-16"
-          >
-            <h2 className="text-3xl font-heading text-white mb-6 tracking-wide">Explore {title}</h2>
-            <CarouselMasonryGrid 
-              items={items} 
-              itemsPerRow={4}
-              onImageClick={(index: number) => {
-                setCurrentImageIndex(index);
-                setLightboxOpen(true);
-              }}
-            />
-          </motion.div>
-          
           {/* Masonry grid layout with 3 columns */}
           <motion.div 
             initial={{ opacity: 0 }}
