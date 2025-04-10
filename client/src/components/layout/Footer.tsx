@@ -50,11 +50,12 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-xl mb-4 text-white">Portfolio</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">Lifestyle</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">Portraits</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">Brands</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">Music</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">Dogs</a></li>
+              <li><a href="/portraits" className="text-gray-400 hover:text-primary transition-colors">Portraits</a></li>
+              <li><a href="/brands" className="text-gray-400 hover:text-primary transition-colors">Brands & Businesses</a></li>
+              <li><a href="/music" className="text-gray-400 hover:text-primary transition-colors">Music</a></li>
+              <li><a href="/dogs" className="text-gray-400 hover:text-primary transition-colors">Dogs</a></li>
+              <li><a href="/sports" className="text-gray-400 hover:text-primary transition-colors">Sports</a></li>
+              <li><a href="/bts" className="text-gray-400 hover:text-primary transition-colors">BTS Photography</a></li>
             </ul>
           </div>
           

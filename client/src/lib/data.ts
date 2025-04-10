@@ -130,10 +130,10 @@ export const portfolioItems: PortfolioItemType[] = [
     isWide: true
   },
   
-  // Brands & Business
+  // Brands & Businesses
   {
     id: 21,
-    title: "Brand Photography",
+    title: "Brands & Businesses Photography",
     subtitle: "Barrister Coffee House",
     imageUrl: imagePath('brands', 'barrister-coffee-house-coffee-pour.jpg'),
     categories: ["brands"],
@@ -142,7 +142,7 @@ export const portfolioItems: PortfolioItemType[] = [
   },
   {
     id: 22,
-    title: "Brand Photography",
+    title: "Brands & Businesses Photography",
     subtitle: "Coffee Roasting Close-Up",
     imageUrl: imagePath('brands', 'barrister-coffee-roast-close-up.jpg'),
     categories: ["brands"],
