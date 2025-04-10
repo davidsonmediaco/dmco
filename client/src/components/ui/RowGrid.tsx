@@ -70,7 +70,7 @@ const RowGrid = ({
       
       {viewAllLink && (
         <div className="flex justify-center mt-8">
-          <Button variant="default" className="bg-primary hover:bg-primary/90 text-black" asChild>
+          <Button variant="default" className="bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-black font-bold px-8 py-6 text-lg" asChild>
             <a href={viewAllLink}>
               {viewAllText} <ExternalLink className="ml-2 w-4 h-4" />
             </a>

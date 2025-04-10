@@ -49,8 +49,8 @@ const PortfolioGrid = () => {
               key={category.id}
               className={`px-6 py-2 rounded-full transition-all duration-300 border-2 ${
                 selectedCategory === category.id 
-                  ? "bg-primary text-black font-bold border-primary" 
-                  : "bg-transparent text-white hover:bg-gray-900 border-gray-700 hover:border-primary/70"
+                  ? "bg-[#D4AF37] text-black font-bold border-[#D4AF37]" 
+                  : "bg-transparent text-white hover:bg-gray-900 border-gray-700 hover:border-[#D4AF37]/70"
               }`}
               onClick={() => setSelectedCategory(category.id)}
             >
@@ -82,7 +82,7 @@ const PortfolioGrid = () => {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-300"></div>
                   <div className="absolute top-4 right-4">
-                    <span className="bg-primary text-black text-xs font-bold py-1 px-3 rounded-full shadow-lg">
+                    <span className="bg-[#D4AF37] text-black text-xs font-bold py-1 px-3 rounded-full shadow-lg">
                       {item.categories[0].charAt(0).toUpperCase() + item.categories[0].slice(1)}
                     </span>
                   </div>
@@ -96,7 +96,7 @@ const PortfolioGrid = () => {
                     <div className="h-px w-1/4 bg-primary/30"></div>
                     <a
                       href={item.link}
-                      className="text-primary hover:text-white font-medium transition-colors flex items-center gap-1 text-sm"
+                      className="text-[#D4AF37] hover:text-white font-medium transition-colors flex items-center gap-1 text-sm"
                     >
                       <span>View Project</span>
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

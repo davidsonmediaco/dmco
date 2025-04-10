@@ -78,8 +78,8 @@ const PortfolioSection = () => {
               key={category.id}
               className={`px-6 py-2 rounded-full transition-all duration-300 border-2 ${
                 selectedCategory === category.id 
-                  ? "bg-primary text-black font-bold border-primary" 
-                  : "bg-transparent text-white hover:bg-gray-900 border-gray-700 hover:border-primary/70"
+                  ? "bg-[#D4AF37] text-black font-bold border-[#D4AF37]" 
+                  : "bg-transparent text-white hover:bg-gray-900 border-gray-700 hover:border-[#D4AF37]/70"
               }`}
               onClick={() => setSelectedCategory(category.id)}
             >
