@@ -11,6 +11,7 @@ const categories = [
   { id: 'music', label: 'Music', path: '/music' },
   { id: 'dogs', label: 'Dogs', path: '/dogs' },
   { id: 'sports', label: 'Sports', path: '/sports' },
+{ id: 'candid-bts', label: 'Candid BTS Photography', path: '/candid-bts' }
 ];
 
 const CategoryGridSection = () => {
