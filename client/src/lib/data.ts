@@ -14,7 +14,7 @@ export const portfolioItems: PortfolioItemType[] = [
     id: 1,
     title: "Portrait Photography",
     subtitle: "Professional Headshots",
-    imageUrl: imagePath('portraits', 'GAILJPH.jpg'),
+    imageUrl: imagePath('portraits', 'gail-bench.jpg.jpg'),
     categories: ["portraits"],
     link: "#",
     isWide: true
@@ -23,7 +23,7 @@ export const portfolioItems: PortfolioItemType[] = [
     id: 2,
     title: "Portrait Photography",
     subtitle: "Outdoor Sessions",
-    imageUrl: imagePath('portraits', 'IMG_1041.jpg'),
+    imageUrl: imagePath('portraits', 'gail-denim-headshot.jpg'),
     categories: ["portraits"],
     link: "#",
     isWide: true
