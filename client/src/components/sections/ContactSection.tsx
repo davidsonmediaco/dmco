@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { apiRequest } from "@/lib/queryClient";
@@ -107,7 +107,20 @@ ${data.message}
                 
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
-                    <MapPin className="h-6 w-6" style={{ color: "#D4AF37" }} />
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="24" 
+                      height="24" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="#D4AF37" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    >
+                      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-heading text-white">Location</h3>
