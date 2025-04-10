@@ -70,15 +70,9 @@ export async function setupVite(app: Express, server: Server) {
 export function serveStatic(app: Express) {
   const distPath = path.resolve(import.meta.dirname, "..", "dist", "public");
   
-  app.use(express.static(distPath));
-  
-  // Serve index.html for all routes for SPA
-  app.get('*', (_req, res) => {
-    res.sendFile(path.join(distPath, 'index.html'));
-  });
-  
-  log('Serving static files from: ' + distPath);
-      `Could not find the build directory: ${distPath}, make sure to build the client first`,
+  if (!fs.existsSync(distPath)) {
+    throw new Error(
+      `Could not find the build directory: ${distPath}, make sure to build the client first`
     );
   }
 
@@ -88,4 +82,6 @@ export function serveStatic(app: Express) {
   app.use("*", (_req, res) => {
     res.sendFile(path.resolve(distPath, "index.html"));
   });
+  
+  log('Serving static files from: ' + distPath);
 }
