@@ -29,7 +29,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Turning Moments Into Stories, And Ideas Into Impact
+            Turning Moments Into Stories, And Ideas Into Reality
           </motion.p>
           
           <motion.a 

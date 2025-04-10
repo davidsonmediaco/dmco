@@ -6,19 +6,19 @@ const ServicesSection = () => {
   const services = [
     {
       id: 1,
-      title: "Photo & Video",
-      description: "Professional photography and videography services tailored to showcase your brand, products, events or personal milestones.",
-      icon: <Camera className="h-8 w-8 text-primary" />,
-      isHighlighted: false,
-      link: "#"
-    },
-    {
-      id: 2,
       title: "Web Design & Management",
       description: "Custom-built, responsive websites that represent your brand perfectly. Includes ongoing support and maintenance.",
       icon: <Monitor className="h-8 w-8 text-primary" />,
-      isHighlighted: true,
+      isHighlighted: false,
       link: "#web-design"
+    },
+    {
+      id: 2,
+      title: "Photo & Video",
+      description: "Professional photography and videography services tailored to showcase your brand, products, events or personal milestones.",
+      icon: <Camera className="h-8 w-8 text-primary" />,
+      isHighlighted: true,
+      link: "#"
     },
     {
       id: 3,
