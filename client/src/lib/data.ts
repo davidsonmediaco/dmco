@@ -68,18 +68,9 @@ export const portfolioItems: PortfolioItemType[] = [
   
   // Brands & Business
   {
-    id: 20,
-    title: "Brand Photography",
-    subtitle: "",
-    imageUrl: imagePath('brands', 'IMG_9346.jpg'),
-    categories: ["brands"],
-    link: "#",
-    isWide: true
-  },
-  {
     id: 21,
     title: "Brand Photography",
-    subtitle: "",
+    subtitle: "Barrister Coffee House",
     imageUrl: imagePath('brands', 'barrister-coffee-house-coffee-pour.jpg'),
     categories: ["brands"],
     link: "#",
@@ -88,7 +79,7 @@ export const portfolioItems: PortfolioItemType[] = [
   {
     id: 22,
     title: "Brand Photography",
-    subtitle: "",
+    subtitle: "Coffee Roasting Close-Up",
     imageUrl: imagePath('brands', 'barrister-coffee-roast-close-up.jpg'),
     categories: ["brands"],
     link: "#",
@@ -97,7 +88,7 @@ export const portfolioItems: PortfolioItemType[] = [
   {
     id: 23,
     title: "Brand Photography",
-    subtitle: "",
+    subtitle: "Coffee Roasting Process",
     imageUrl: imagePath('brands', 'barrister-coffee-roasting.jpg'),
     categories: ["brands"],
     link: "#",
@@ -106,7 +97,7 @@ export const portfolioItems: PortfolioItemType[] = [
   {
     id: 24,
     title: "Brand Photography",
-    subtitle: "",
+    subtitle: "San Remo Coffee Machine",
     imageUrl: imagePath('brands', 'san-remo-coffe-machine.jpg.jpg'),
     categories: ["brands"],
     link: "#",
@@ -115,8 +106,17 @@ export const portfolioItems: PortfolioItemType[] = [
   {
     id: 25,
     title: "Brand Photography",
-    subtitle: "",
+    subtitle: "San Remo Coffee Wide",
     imageUrl: imagePath('brands', 'san-remo-coffee-wide.jpg'),
+    categories: ["brands"],
+    link: "#",
+    isWide: true
+  },
+  {
+    id: 26,
+    title: "Brand Photography",
+    subtitle: "San Remo Espresso",
+    imageUrl: imagePath('brands', 'san-remo-espresso.jpg'),
     categories: ["brands"],
     link: "#",
     isWide: true
