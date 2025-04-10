@@ -80,7 +80,7 @@ export const portfolioItems: PortfolioItemType[] = [
     id: 21,
     title: "Brand Photography",
     subtitle: "",
-    imageUrl: imagePath('brands', 'IMG_9352.jpg'),
+    imageUrl: imagePath('brands', 'barrister-coffee-house-coffee-pour.jpg'),
     categories: ["brands"],
     link: "#",
     isWide: true
@@ -89,7 +89,7 @@ export const portfolioItems: PortfolioItemType[] = [
     id: 22,
     title: "Brand Photography",
     subtitle: "",
-    imageUrl: imagePath('brands', 'IMG_9360.jpg'),
+    imageUrl: imagePath('brands', 'barrister-coffee-roast-close-up.jpg'),
     categories: ["brands"],
     link: "#",
     isWide: true
@@ -98,7 +98,7 @@ export const portfolioItems: PortfolioItemType[] = [
     id: 23,
     title: "Brand Photography",
     subtitle: "",
-    imageUrl: imagePath('brands', 'IMG_9382-Enhanced-NR.jpg'),
+    imageUrl: imagePath('brands', 'barrister-coffee-roasting.jpg'),
     categories: ["brands"],
     link: "#",
     isWide: true
@@ -107,7 +107,7 @@ export const portfolioItems: PortfolioItemType[] = [
     id: 24,
     title: "Brand Photography",
     subtitle: "",
-    imageUrl: imagePath('brands', 'IMG_9423.jpg'),
+    imageUrl: imagePath('brands', 'san-remo-coffe-machine.jpg.jpg'),
     categories: ["brands"],
     link: "#",
     isWide: true
@@ -116,7 +116,7 @@ export const portfolioItems: PortfolioItemType[] = [
     id: 25,
     title: "Brand Photography",
     subtitle: "",
-    imageUrl: imagePath('brands', 'IMG_9433-Enhanced-NR.jpg'),
+    imageUrl: imagePath('brands', 'san-remo-coffee-wide.jpg'),
     categories: ["brands"],
     link: "#",
     isWide: true
