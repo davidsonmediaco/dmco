@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { portfolioItems } from "@/lib/data";
 import { PortfolioItemType } from "@/components/ui/PortfolioItem";
-import RowGrid from "@/components/ui/RowGrid";
+import CarouselMasonryGrid from "@/components/ui/CarouselMasonryGrid";
 import LightboxModal from "@/components/ui/LightboxModal";
 
 type Category = 'portraits' | 'brands' | 'music' | 'dogs';
@@ -96,7 +96,7 @@ const PortfolioSection = () => {
           currentIndex={currentImageIndex}
         />
         
-        {/* Row Grid Layout */}
+        {/* Carousel Masonry Grid Layout */}
         <motion.div 
           variants={container}
           initial="hidden"
@@ -104,16 +104,27 @@ const PortfolioSection = () => {
           viewport={{ once: true }}
           className="mb-10"
         >
-          <RowGrid 
+          <CarouselMasonryGrid 
             items={filteredItems} 
-            rowSize={5}
-            onImageClick={(index) => {
+            itemsPerRow={4} 
+            onImageClick={(index: number) => {
               setCurrentImageIndex(index);
               setLightboxOpen(true);
             }}
-            viewAllLink={`/${selectedCategory}`}
-            viewAllText={`View All ${selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}`}
           />
+          
+          <div className="mt-8 flex justify-center">
+            <motion.a 
+              href={`/${selectedCategory}`}
+              className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-black font-bold text-lg px-10 py-3 rounded-md shadow-lg"
+              variants={itemAnimation}
+            >
+              View All {selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1 w-5 h-5">
+                <path d="M7 7h10v10" /><path d="M7 17L17 7" />
+              </svg>
+            </motion.a>
+          </div>
         </motion.div>
       </div>
     </section>

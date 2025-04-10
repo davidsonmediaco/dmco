@@ -145,6 +145,28 @@
   background-color: transparent;
 }
 
+/* Carousel Masonry Grid */
+.carousel-masonry-grid {
+  padding: 0 40px; /* Space for navigation arrows */
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.carousel-masonry-item {
+  transition: all 0.3s ease-in-out;
+}
+
+.carousel-masonry-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive adjustments for carousel masonry */
+@media (max-width: 640px) {
+  .carousel-masonry-grid {
+    padding: 0 30px;
+  }
+}
+
 /* Prevent image saving/downloading */
 img {
   pointer-events: none;
