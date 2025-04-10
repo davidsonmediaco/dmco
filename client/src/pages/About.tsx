@@ -15,7 +15,7 @@ const AboutPage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h1 className="text-5xl md:text-6xl font-heading mb-8 tracking-wide">About Me</h1>
+                <h1 className="text-5xl md:text-6xl font-heading mb-8" style={{ letterSpacing: '0.02em', textShadow: 'none' }}>About Me</h1>
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
@@ -36,7 +36,7 @@ const AboutPage = () => {
                   </div>
                   
                   <div className="bg-zinc-900 rounded-xl p-6 shadow-lg">
-                    <h3 className="text-xl font-heading mb-4 text-primary">Contact Information</h3>
+                    <h3 className="text-xl font-heading mb-4 text-primary" style={{ letterSpacing: '0.02em', textShadow: 'none' }}>Contact Information</h3>
                     <ul className="space-y-3 text-zinc-300">
                       <li>
                         <span className="font-bold text-white">Email:</span>{" "}
@@ -65,7 +65,7 @@ const AboutPage = () => {
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
                   <div className="prose prose-lg prose-invert max-w-none">
-                    <h2 className="text-3xl font-heading text-white mb-6">The Story Behind Davidson Media Co.</h2>
+                    <h2 className="text-3xl font-heading text-white mb-6" style={{ letterSpacing: '0.02em', textShadow: 'none' }}>The Story Behind Davidson Media Co.</h2>
                     
                     <p className="mb-6">
                       I grew up in the greatest city in the world, New York, where I quickly realized that photography is everywhere. My first camera was a little blue Canon PowerShot, and I brought it with me everywhere I went. When you live in a place like NYC, there's always something worth capturing.
@@ -87,7 +87,7 @@ const AboutPage = () => {
                       More than anything, I want to show you the beauty in everyday moments. Photography is about preserving what matters and creating memories that last. To me, being a photographer isn't just about holding a camera, it's about helping people remember what really matters.
                     </p>
                     
-                    <h3 className="text-2xl font-heading mt-10 mb-4 text-white">Areas of Expertise</h3>
+                    <h3 className="text-2xl font-heading mt-10 mb-4 text-white" style={{ letterSpacing: '0.02em', textShadow: 'none' }}>Areas of Expertise</h3>
                     
                     <ul className="list-disc pl-5 mb-6 space-y-2">
                       <li>Portrait Photography (Professional, Family, Lifestyle)</li>
