@@ -252,6 +252,11 @@ button:not(.embla__button):not(.lightbox-control),
   background-color: transparent !important;
 }
 
+/* Ensure primary text color is visible */
+.text-primary {
+  color: #D4AF37; /* Ensure this color is visible against the background */
+}
+
 /* Specifically target small black buttons that might be save buttons */
 div[style*="position: absolute"],
 div[style*="position:absolute"] {
