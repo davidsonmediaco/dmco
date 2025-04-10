@@ -5,12 +5,10 @@ import { z } from "zod";
 import multer from 'multer';
 import fs from 'fs';
 import path from 'path';
+import { sendContactEmail, emailSchema } from './email';
 
-const contactFormSchema = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  message: z.string().min(10)
-});
+// Use the same schema for contact form and email
+const contactFormSchema = emailSchema;
 
 // Define the types for multer file requests
 interface MulterRequest extends Request {
@@ -62,12 +60,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Validate the request body
       const validatedData = contactFormSchema.parse(req.body);
       
-      // Here we would typically save to database or send an email
-      // For now, we'll just log and send a success response
-      console.log("Contact form submission:", validatedData);
+      // Send an email using SendGrid
+      console.log("Sending contact form submission to davidsonmediaco@gmail.com");
+      const emailSent = await sendContactEmail(validatedData);
       
-      // Simulate a small delay for API call
-      await new Promise(resolve => setTimeout(resolve, 500));
+      if (!emailSent) {
+        // If email failed to send but validation passed
+        console.error("Contact form email failed to send:", validatedData);
+        return res.status(500).json({
+          success: false,
+          message: "Could not send email. Please try again later or contact directly."
+        });
+      }
       
       res.status(200).json({ 
         success: true, 
@@ -82,6 +86,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
       
+      console.error("Contact form error:", error);
       res.status(500).json({ 
         success: false, 
         message: "An error occurred while processing your request" 

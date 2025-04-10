@@ -36,16 +36,31 @@ const ContactSection = () => {
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
     try {
-      await apiRequest("POST", "/api/contact", data);
+      // Create email subject and body
+      const subject = `Contact Form Submission from ${data.name}`;
+      const body = `
+Name: ${data.name}
+Email: ${data.email}
+
+Message:
+${data.message}
+      `;
+      
+      // Create a mailto link
+      const mailtoLink = `mailto:davidsonmediaco@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Open the email client
+      window.open(mailtoLink, '_blank');
+      
       toast({
-        title: "Message sent!",
-        description: "Thank you for contacting us. We'll get back to you soon.",
+        title: "Email client opened!",
+        description: "Please send the email from your mail client to complete your message.",
       });
       reset();
     } catch (error) {
       toast({
         title: "Something went wrong",
-        description: "Your message could not be sent. Please try again later.",
+        description: "Could not open email client. Please email us directly at davidsonmediaco@gmail.com",
         variant: "destructive"
       });
     } finally {
@@ -66,7 +81,8 @@ const ContactSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="p-8 md:p-12 bg-primary/10 text-white border-r border-gray-800">
               <h2 className="text-3xl font-heading mb-6 text-primary tracking-wide">Ready to Work Together?</h2>
-              <p className="mb-8 text-gray-300">No pressure. Just tell me what you need — I'll take it from there.</p>
+              <p className="mb-4 text-gray-300">No pressure. Just tell me what you need — I'll take it from there.</p>
+              <p className="mb-8 text-gray-300">Fill out the form and click "Open Email Client" to generate an email to me. You'll be able to review before sending.</p>
               
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -147,7 +163,7 @@ const ContactSection = () => {
                   className="w-full px-6 py-3 bg-primary text-white rounded-lg font-bold hover:bg-primary/90 transition-colors"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? 'Opening Email...' : 'Open Email Client'}
                 </button>
               </form>
             </div>
