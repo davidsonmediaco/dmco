@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,7 +28,7 @@ const Header = () => {
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-        <a href="#" className="text-2xl font-heading font-normal text-primary drop-shadow-lg" style={{ letterSpacing: '0.03em' }}>Davidson Media Co</a>
+        <Link href="/" className="text-2xl font-heading font-normal text-primary drop-shadow-lg" style={{ letterSpacing: '0.03em' }}>Davidson Media Co</Link>
         
         {/* Mobile menu button */}
         <button 
@@ -46,6 +47,7 @@ const Header = () => {
           <a href="#services" className="text-white hover:text-primary transition-colors font-medium drop-shadow-md">Services</a>
           <a href="#web-design" className="text-white hover:text-primary transition-colors font-medium drop-shadow-md">Web Design</a>
           <a href="#contact" className="text-white hover:text-primary transition-colors font-medium drop-shadow-md">Contact</a>
+          <Link href="/about" className="text-white hover:text-primary transition-colors font-medium drop-shadow-md">About Me</Link>
         </nav>
       </div>
       
@@ -84,6 +86,13 @@ const Header = () => {
           >
             Contact
           </a>
+          <Link 
+            href="/about" 
+            className="text-white hover:text-primary transition-colors py-2 font-medium"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            About Me
+          </Link>
         </div>
       </nav>
     </header>
