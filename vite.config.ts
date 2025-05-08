@@ -12,12 +12,16 @@ export default defineConfig({
     },
   },
   root: "./client",
+  base: './',
   build: {
     outDir: "../dist",
     emptyOutDir: true,
     sourcemap: true,
     minify: 'terser',
     rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'client/index.html'),
+      },
       output: {
         manualChunks: {
           'vendor': ['react', 'react-dom', 'react-router-dom', 'wouter', 'framer-motion'],
