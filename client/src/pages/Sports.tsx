@@ -1,4 +1,4 @@
-import PortfolioGridPage from "@/components/sections/PortfolioGridPage";
+import PortfolioGridPage from "../components/sections/PortfolioGridPage";
 
 export default function SportsPage() {
   return (

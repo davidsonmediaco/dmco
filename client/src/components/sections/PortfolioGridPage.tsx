@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { portfolioItems } from "@/lib/data";
-import { PortfolioItemType } from "@/components/ui/PortfolioItem";
-import ImageWithDimensions from "@/components/ui/ImageWithDimensions";
-import LightboxModal from "@/components/ui/LightboxModal";
-import MasonryGrid from "@/components/ui/MasonryGrid";
-import CarouselMasonryGrid from "@/components/ui/CarouselMasonryGrid";
+import { portfolioItems } from "../../lib/data";
+import { PortfolioItemType } from "../ui/PortfolioItem";
+import ImageWithDimensions from "../ui/ImageWithDimensions";
+import LightboxModal from "../ui/LightboxModal";
+import MasonryGrid from "../ui/MasonryGrid";
+import CarouselMasonryGrid from "../ui/CarouselMasonryGrid";
 
 interface PortfolioGridPageProps {
   category: string;

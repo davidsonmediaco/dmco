@@ -1,11 +1,11 @@
-import PortfolioGridPage from "@/components/sections/PortfolioGridPage";
+import PortfolioGridPage from "../components/sections/PortfolioGridPage";
 
 export default function MusicPage() {
   return (
     <PortfolioGridPage 
       category="music" 
       title="Music Photography"
-      description="Dynamic and energetic visuals capturing the energy and emotion of live performances and artist portraits. From intimate studio sessions to arena concerts, these images convey the soul of music."
+      description="Documenting the energy and artistry of live music performances. From intimate venues to major festivals, these images capture the passion and connection between artists and their audience."
     />
   );
 }

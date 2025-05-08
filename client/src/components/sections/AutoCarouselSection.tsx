@@ -2,11 +2,11 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
-import { PortfolioItemType } from '@/components/ui/PortfolioItem';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import CarouselMasonryGrid from '@/components/ui/CarouselMasonryGrid';
-import LightboxModal from '@/components/ui/LightboxModal';
+import { PortfolioItemType } from '../ui/PortfolioItem';
+import { Button } from '../ui/button';
+import { cn } from '../../lib/utils';
+import CarouselMasonryGrid from '../ui/CarouselMasonryGrid';
+import LightboxModal from '../ui/LightboxModal';
 
 interface AutoCarouselSectionProps {
   title: string;

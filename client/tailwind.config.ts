@@ -3,8 +3,8 @@ import type { Config } from "tailwindcss";
 export default {
   darkMode: ["class"],
   content: [
-    "./client/src/**/*.{js,jsx,ts,tsx}",
-    "./client/index.html"
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./index.html"
   ],
   theme: {
     extend: {
@@ -90,4 +90,4 @@ export default {
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
-} satisfies Config;
+} satisfies Config; 

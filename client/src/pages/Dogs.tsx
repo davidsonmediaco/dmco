@@ -1,11 +1,11 @@
-import PortfolioGridPage from "@/components/sections/PortfolioGridPage";
+import PortfolioGridPage from "../components/sections/PortfolioGridPage";
 
 export default function DogsPage() {
   return (
     <PortfolioGridPage 
       category="dogs" 
       title="Dog Photography"
-      description="Capturing the unique personality, joy, and spirit of our canine companions. These images celebrate the special bond between dogs and their humans through playful and heartfelt moments."
+      description="Capturing the playful spirit and unique personalities of our four-legged friends. From candid moments to posed portraits, these images celebrate the joy and companionship of dogs."
     />
   );
 }

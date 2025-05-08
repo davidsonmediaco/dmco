@@ -1,10 +1,11 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import HeroSection from "@/components/sections/HeroSection";
-import ServicesSection from "@/components/sections/ServicesSection";
-import WebDesignSection from "@/components/sections/WebDesignSection";
-import ContactSection from "@/components/sections/ContactSection";
-import CategoryGridSection from "@/components/sections/CategoryGridSection";
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
+import HeroSection from "../components/sections/HeroSection";
+import ServicesSection from "../components/sections/ServicesSection";
+import PortfolioSection from "../components/sections/PortfolioSection";
+import ContactSection from "../components/sections/ContactSection";
+import AutoCarouselSection from "../components/sections/AutoCarouselSection";
+import { portfolioItems } from "../lib/data";
 import { useEffect } from "react";
 
 const Home = () => {
@@ -30,7 +31,8 @@ const Home = () => {
     };
   }, []);
 
-  // We're now using CategoryGridSection which handles the filtering internally
+  // Filter items for the carousel
+  const featuredItems = portfolioItems.slice(0, 8); // Get first 8 items for carousel
 
   return (
     <div className="font-inter text-white bg-black">
@@ -39,10 +41,15 @@ const Home = () => {
         <HeroSection />
         
         {/* Portfolio Grid Section */}
-        <CategoryGridSection />
+        <PortfolioSection />
         
         <ServicesSection />
-        <WebDesignSection />
+        <AutoCarouselSection 
+          title="Featured Work"
+          subtitle="A selection of our best photography"
+          items={featuredItems}
+          viewMoreLink="/portfolio"
+        />
         <ContactSection />
       </main>
       <Footer />
