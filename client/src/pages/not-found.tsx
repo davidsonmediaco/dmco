@@ -1,23 +1,22 @@
-import { Link } from "wouter";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
+import { motion } from "framer-motion";
+import { Button } from "../components/ui/button";
+import { Link } from "react-router-dom";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black">
-      <Card className="w-[420px] bg-zinc-900 border-zinc-800">
-        <CardHeader>
-          <CardTitle className="text-2xl text-center text-white">Page Not Found</CardTitle>
-        </CardHeader>
-        <CardContent className="text-center">
-          <p className="text-zinc-400 mb-6">The page you're looking for doesn't exist or has been moved.</p>
-          <Link 
-            to="/" 
-            className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-black font-medium text-sm transition-colors duration-300"
-          >
-            Return Home
-          </Link>
-        </CardContent>
-      </Card>
-    </div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="min-h-screen bg-background flex items-center justify-center"
+    >
+      <div className="text-center">
+        <h1 className="text-6xl font-bold mb-4 text-foreground">404</h1>
+        <p className="text-xl mb-8 text-foreground">Page not found</p>
+        <Button asChild>
+          <Link to="/">Return Home</Link>
+        </Button>
+      </div>
+    </motion.div>
   );
 }

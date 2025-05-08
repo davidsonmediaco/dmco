@@ -1,11 +1,19 @@
+import { motion } from "framer-motion";
 import PortfolioGridPage from "../components/sections/PortfolioGridPage";
 
-export default function SportsPage() {
+export default function Sports() {
   return (
-    <PortfolioGridPage 
-      category="sports" 
-      title="Sports Photography"
-      description="Freezing moments of athletic excellence, dedication, and raw emotion. From high-stakes action to quiet moments of determination, these images document the passion and drama of sporting events."
-    />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="min-h-screen bg-background"
+    >
+      <PortfolioGridPage
+        category="sports"
+        title="Sports Photography"
+        description="Capturing the intensity and emotion of athletic moments."
+      />
+    </motion.div>
   );
 }

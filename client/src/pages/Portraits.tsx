@@ -1,11 +1,19 @@
+import { motion } from "framer-motion";
 import PortfolioGridPage from "../components/sections/PortfolioGridPage";
 
-export default function PortraitsPage() {
+export default function Portraits() {
   return (
-    <PortfolioGridPage 
-      category="portraits" 
-      title="Portrait Photography"
-      description="Capturing the essence and personality of individuals through carefully crafted portraiture. From professional headshots to artistic expressions, each image tells a unique story."
-    />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="min-h-screen bg-background"
+    >
+      <PortfolioGridPage
+        category="portraits"
+        title="Portrait Photography"
+        description="Professional portraits that capture your unique personality and story."
+      />
+    </motion.div>
   );
 }

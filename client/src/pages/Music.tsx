@@ -1,11 +1,19 @@
+import { motion } from "framer-motion";
 import PortfolioGridPage from "../components/sections/PortfolioGridPage";
 
-export default function MusicPage() {
+export default function Music() {
   return (
-    <PortfolioGridPage 
-      category="music" 
-      title="Music Photography"
-      description="Documenting the energy and artistry of live music performances. From intimate venues to major festivals, these images capture the passion and connection between artists and their audience."
-    />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="min-h-screen bg-background"
+    >
+      <PortfolioGridPage
+        category="music"
+        title="Music Photography"
+        description="Capturing the energy and emotion of live performances and artist portraits."
+      />
+    </motion.div>
   );
 }

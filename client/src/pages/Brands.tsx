@@ -1,11 +1,19 @@
+import { motion } from "framer-motion";
 import PortfolioGridPage from "../components/sections/PortfolioGridPage";
 
-export default function BrandsPage() {
+export default function Brands() {
   return (
-    <PortfolioGridPage 
-      category="brands" 
-      title="Brand Photography"
-      description="Professional commercial photography that tells your brand's story. From product shots to lifestyle imagery, these photos are crafted to elevate your brand's visual identity."
-    />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="min-h-screen bg-background"
+    >
+      <PortfolioGridPage
+        category="brands"
+        title="Brand Photography"
+        description="Professional photography services for businesses and brands."
+      />
+    </motion.div>
   );
 }
