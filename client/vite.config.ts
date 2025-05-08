@@ -4,7 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -24,9 +24,19 @@ export default defineConfig({
           'ui-vendor': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-slot'],
           'utils-vendor': ['clsx', 'tailwind-merge', 'class-variance-authority'],
         },
-        assetFileNames: 'assets/[name]-[hash][extname]',
-        chunkFileNames: 'assets/[name]-[hash].js',
-        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: (assetInfo) => {
+          if (!assetInfo.name) return 'assets/[name]-[hash][extname]';
+          
+          if (assetInfo.name.endsWith('.css')) {
+            return 'assets/css/[name]-[hash][extname]';
+          }
+          if (/\.(png|jpe?g|gif|svg|webp)$/.test(assetInfo.name)) {
+            return 'assets/images/[name]-[hash][extname]';
+          }
+          return 'assets/[name]-[hash][extname]';
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
       },
     },
     chunkSizeWarningLimit: 1000,
