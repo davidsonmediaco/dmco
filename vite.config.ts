@@ -13,11 +13,13 @@ export default defineConfig({
   },
   root: "./client",
   base: './',
+  publicDir: 'public',
   build: {
     outDir: "../dist",
     emptyOutDir: true,
     sourcemap: true,
     minify: 'terser',
+    assetsDir: 'assets',
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'client/index.html'),
