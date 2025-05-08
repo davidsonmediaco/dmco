@@ -1,0 +1,300 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Masonry Grid Layout */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .masonry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.masonry-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.masonry-item {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  border-radius: 6px;
+  background-color: #111;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.masonry-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.masonry-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Responsive padding for mobile */
+@media (max-width: 640px) {
+  .masonry-grid {
+    gap: 12px;
+  }
+  
+  .masonry-column {
+    gap: 12px;
+  }
+}
+
+/* Row grid layout (5 items per row) */
+.row-grid-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.row-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  width: 100%;
+}
+
+.grid-item {
+  position: relative;
+  cursor: pointer;
+  background-color: #000;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  aspect-ratio: 1/1;
+}
+
+.grid-item:hover {
+  transform: scale(1.02);
+}
+
+.grid-item-spacer {
+  background-color: transparent;
+}
+
+/* Make the rows responsive */
+@media (max-width: 1280px) {
+  .row-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .row-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .row-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .row-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Carousel Styles */
+.carousel-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  background-color: transparent;
+}
+
+/* Carousel Masonry Grid */
+.carousel-masonry-grid {
+  padding: 0 40px; /* Space for navigation arrows */
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.carousel-masonry-item {
+  transition: all 0.3s ease-in-out;
+}
+
+.carousel-masonry-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive adjustments for carousel masonry */
+@media (max-width: 640px) {
+  .carousel-masonry-grid {
+    padding: 0 30px;
+  }
+}
+
+/* Prevent image saving/downloading */
+img {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Additional protection for all images */
+.protected-image {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  position: relative;
+}
+
+/* Image container with invisible overlay to prevent browser extensions from adding save buttons */
+.image-container {
+  position: relative;
+}
+
+/* Comprehensive protection against any save buttons */
+.image-container::before,
+.image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 9999 !important;
+  /* Important: This blocks clicks on any element under this layer */
+  pointer-events: auto !important;
+}
+
+/* Force all images to use a higher z-index than potential save buttons */
+img.protected-image {
+  z-index: 1;
+  position: relative;
+}
+
+/* Add specific blocker for the top-right corner where save buttons typically appear */
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+}
+
+/* Prevent any kind of button from appearing over images */
+img + button,
+img + div[role="button"],
+img + span[role="button"],
+img ~ button,
+img ~ div[role="button"],
+img ~ span[role="button"],
+.image-container button,
+.image-container [role="button"],
+.masonry-item button,
+.masonry-item [role="button"],
+.carousel-image-container button,
+.carousel-image-container [role="button"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Target a floating 'Save' button with a dark background */
+button:not(.embla__button):not(.lightbox-control),
+[role="button"]:not(.embla__button):not(.lightbox-control) {
+  background-color: transparent !important;
+}
+
+/* Ensure primary text color is visible */
+.text-primary {
+  color: #D4AF37; /* Ensure this color is visible against the background */
+}
+
+/* Specifically target small black buttons that might be save buttons */
+div[style*="position: absolute"],
+div[style*="position:absolute"] {
+  background-color: transparent !important;
+}
+
+/* Hide any buttons on or around images */
+[role="button"][aria-label*="save"],
+[role="button"][aria-label*="Save"],
+[role="button"][aria-label*="Pin"],
+[role="button"][aria-label*="pin"],
+[role="button"][aria-label*="Download"],
+[role="button"][aria-label*="download"],
+[role="button"][aria-label*="Collect"],
+[role="button"][aria-label*="collect"],
+[data-pin-log],
+[data-pin-href],
+.saveButton,
+.save-button,
+.pin-button,
+.pinit-button,
+.pinterest-button,
+.pinterest-save-button,
+.save-it-button,
+.save-image-button,
+.download-button,
+.download-image-button,
+.image-download,
+.image-save {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  z-index: -1 !important;
+}

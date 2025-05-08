@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="pinterest" content="nopin" description="Sorry, you can't save photos from this website." />
+    <meta name="pinterest-rich-pin" content="false" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="date=no" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="robots" content="noarchive" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Davidson Media Co" />
+    <meta property="og:description" content="Professional Photography and Media Services" />
+    <meta property="og:image" content="/gail-pool-social-image.jpg" />
+    <meta property="og:url" content="https://davidsonmediaco.com" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Davidson Media Co" />
+    <meta name="twitter:description" content="Professional Photography and Media Services" />
+    <meta name="twitter:image" content="/gail-pool-social-image.jpg" />
+    
+    <!-- Disable Pinterest completely -->
+    <script type="text/javascript">
+      window.pinnit = false;
+      window.pinit_load = false;
+      window.PIN_DISABLE = true;
+      window.PIN_DO_NOT_TRACK = true;
+      window.PIN_UNAUTH = true;
+    </script>
+    
+    <!-- Block save buttons with inline style -->
+    <style>
+      /* Hide any external save buttons */
+      [data-pin-log], 
+      [data-pin-href],
+      [class*="pin-it"], 
+      [class*="save-"],
+      [class*="pinterest"],
+      [aria-label*="save"],
+      [aria-label*="Save"],
+      [aria-label*="Pin"],
+      [aria-label*="pin"],
+      /* Target the specific Pinterest save button */
+      [aria-label="Pin on Pinterest"],
+      [aria-label="Save on Pinterest"],
+      [aria-label="Save"],
+      [aria-label="Save Image"],
+      span[role="button"][tabindex="0"],
+      /* Brute force approach for black buttons that appear on hover */
+      div[style*="background: rgb(0, 0, 0)"][style*="color: rgb(255, 255, 255)"],
+      div[style*="background: black"],
+      div[style*="background:#000000"],
+      /* Target buttons with specific positioning that might be the save buttons */
+      div[style*="position: absolute"][style*="right: 10px"][style*="top: 10px"],
+      div[style*="position: absolute"][style*="right: 8px"][style*="top: 8px"],
+      div[style*="right: 0"][style*="top: 0"][role="button"],
+      /* Target Pinterest specific elements */
+      .pinit-button,
+      .pin-it-button,
+      .pinterestOverlay,
+      .pinterestSaveButton,
+      .PinterestButton,
+      .pinterest-button,
+      /* Target anything that might have save in class or style */
+      [class*="save"],
+      *[style*="SaveButton"] {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        height: 0 !important;
+        width: 0 !important;
+        position: absolute !important;
+        left: -9999px !important;
+        top: -9999px !important;
+        z-index: -999 !important;
+      }
+    </style>
+    
+    <!-- Script to aggressively remove any save buttons as soon as they appear -->
+    <script type="text/javascript">
+      // Disable right-click saving
+      document.addEventListener('contextmenu', function(e) {
+        if (e.target.tagName.toLowerCase() === 'img') {
+          e.preventDefault();
+          return false;
+        }
+      }, true);
+      
+      // Remove save buttons
+      function removeSaveButtons() {
+        // Find all elements that might be save buttons
+        const buttons = document.querySelectorAll(
+          // Button selectors targeting Pinterest and other save buttons
+          '[aria-label="Save"], [aria-label="Save Image"], [aria-label="Pin on Pinterest"], ' +
+          'span[role="button"][tabindex="0"], ' +
+          'button.pin-it-button, button.save-button, ' +
+          // Look for small black elements that might be the save button
+          'div[style*="background: rgb(0, 0, 0)"], div[style*="background: black"], ' +
+          // Look for any button-like elements near the top-right of an image
+          'div[style*="position: absolute"][style*="right: "][style*="top: "]'
+        );
+        
+        buttons.forEach(function(button) {
+          // Completely remove the button
+          button.style.display = 'none';
+          button.style.visibility = 'hidden';
+          button.style.opacity = '0';
+          button.style.pointerEvents = 'none';
+          try {
+            button.parentNode.removeChild(button);
+          } catch(e) {}
+        });
+      }
+      
+      // Run immediately and then every 50ms
+      removeSaveButtons();
+      setInterval(removeSaveButtons, 50);
+      
+      // Also intercept clicks on save buttons specifically
+      document.addEventListener('click', function(e) {
+        const target = e.target;
+        const parent = target.parentNode;
+        
+        // Check if the click is on something that might be a save button
+        if (
+          (target.getAttribute('aria-label') && 
+           (target.getAttribute('aria-label').includes('Save') || 
+            target.getAttribute('aria-label').includes('Pin'))) ||
+          (target.getAttribute('role') === 'button' && 
+           target.style && 
+           (target.style.backgroundColor === 'black' || 
+            target.style.background === 'rgb(0, 0, 0)')) ||
+          (parent && parent.getAttribute('role') === 'button' &&
+           (parent.style.backgroundColor === 'black' || 
+            parent.style.background === 'rgb(0, 0, 0)'))
+        ) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      }, true);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

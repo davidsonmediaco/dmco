@@ -1,0 +1,161 @@
+// This is a basic HTML + CSS + JavaScript structure to build out the Davidson Media Co. homepage
+// You can run this in Replit using an index.html + script.js + style.css structure or an HTML file with embedded style and script
+
+// --- index.html ---
+
+const html = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Davidson Media Co</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="girl-in-pool.jpg" alt="Girl in Pool" class="hero-image">
+    <div class="hero-text">
+      <h1>Davidson Media Co</h1>
+      <p>Visual stories, beautifully built.</p>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid -->
+  <section class="portfolio">
+    <h2>My Work</h2>
+    <div class="grid">
+      <a href="#" class="grid-item">Lifestyle</a>
+      <a href="#" class="grid-item">Portraits</a>
+      <a href="#" class="grid-item">Brands & Business</a>
+      <a href="#" class="grid-item">Music</a>
+      <a href="#" class="grid-item">Dogs</a>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="services">
+    <h2>What I Can Do For You</h2>
+    <p>From dynamic content to fully functional websites, I offer creative solutions that bring your brand to life.</p>
+    <div class="service-cards">
+      <div class="card">Photo & Video</div>
+      <div class="card highlight">Web Design & Management</div>
+      <div class="card">Social Media Management & Consulting</div>
+    </div>
+  </section>
+
+  <!-- Web Design Focus -->
+  <section class="feature">
+    <h2>Your Brand, Your Site, Done Right.</h2>
+    <p>Functional. Beautiful. SEO-optimized. Sites that convert.</p>
+    <button onclick="alert('Let\'s build your site!')">Let’s Build Your Site</button>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="contact">
+    <h2>Ready to Work Together?</h2>
+    <p>No pressure. Just tell me what you need — I’ll take it from there.</p>
+    <form>
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Tell me about your project..."></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+`;
+
+// --- style.css ---
+
+const css = `
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: #f8f8f8;
+  color: #222;
+}
+.hero {
+  position: relative;
+  height: 100vh;
+}
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+.grid-item {
+  background: #fff;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+.services .card {
+  background: #fff;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.services .highlight {
+  border: 2px solid #0077ff;
+}
+.feature {
+  text-align: center;
+  padding: 2rem;
+  background: #fff;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: auto;
+  padding: 2rem;
+}
+input, textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+button {
+  padding: 0.75rem;
+  border: none;
+  background-color: #000;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+`;
+
+// --- script.js ---
+
+const js = `
+// Optional JS for interactions if needed
+console.log("Davidson Media Co site loaded!");
+`;
+
+// Output the HTML, CSS, and JS strings for use in Replit
+console.log({ html, css, js });
