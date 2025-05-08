@@ -107,6 +107,25 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Contact Button Section */}
+        <section className="py-12 bg-black">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto text-center">
+              <motion.a
+                href="mailto:davidsonmediaco@gmail.com"
+                className="inline-flex items-center px-8 py-3 bg-[#D4AF37] text-black rounded-full font-bold hover:bg-[#D4AF37]/90 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>Get in Touch</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </motion.a>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
