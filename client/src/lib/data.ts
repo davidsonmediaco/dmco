@@ -88,7 +88,7 @@ export const portfolioItems: PortfolioItemType[] = [
     id: 3,
     title: "Portrait Photography",
     subtitle: "Studio Portraits",
-    imageUrl: imagePath('portraits', 'laura 4.png'),
+    imageUrl: imagePath('portraits', 'laura-4-optimized.webp'),
     categories: ["portraits"],
     link: "#",
     isWide: true
