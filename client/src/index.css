@@ -60,27 +60,42 @@
 /* Masonry Grid Layout */
 .masonry-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
   width: 100%;
+  padding: 0 1rem;
 }
 
-@media (min-width: 640px) {
+@media (max-width: 1024px) {
   .masonry-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 640px) {
   .masonry-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
 
 .masonry-column {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .masonry-column {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .masonry-column {
+    gap: 16px;
+  }
 }
 
 .masonry-item {
@@ -88,7 +103,7 @@
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
-  border-radius: 6px;
+  border-radius: 8px;
   background-color: #111;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -104,18 +119,7 @@
   height: auto;
   display: block;
   object-fit: cover;
-  border-radius: 6px;
-}
-
-/* Responsive padding for mobile */
-@media (max-width: 640px) {
-  .masonry-grid {
-    gap: 12px;
-  }
-  
-  .masonry-column {
-    gap: 12px;
-  }
+  border-radius: 8px;
 }
 
 /* Row grid layout (5 items per row) */
