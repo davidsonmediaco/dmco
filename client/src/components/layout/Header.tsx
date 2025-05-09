@@ -27,13 +27,13 @@ const Header = () => {
         ? 'bg-gradient-to-b from-black/80 to-black/40 backdrop-blur-sm' 
         : 'bg-transparent'
     }`}>
-      <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-heading font-normal text-primary drop-shadow-lg" style={{ letterSpacing: '0.03em' }}>Davidson Media Co</Link>
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <Link href="/" className="text-2xl font-heading font-extrabold text-[#D4AF37] drop-shadow-lg tracking-wide" style={{ letterSpacing: '0.03em' }}>Davidson Media Co</Link>
         
         {/* Mobile menu button */}
         <button 
           onClick={toggleMenu}
-          className="lg:hidden text-white focus:outline-none drop-shadow-md"
+          className="lg:hidden text-[#D4AF37] focus:outline-none drop-shadow-md"
           aria-label="Toggle menu"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -43,11 +43,11 @@ const Header = () => {
         
         {/* Desktop navigation */}
         <nav className="hidden lg:flex items-center space-x-8">
-          <a href="#work" className="text-white hover:text-primary transition-colors font-medium drop-shadow-md">Work</a>
-          <a href="#services" className="text-white hover:text-primary transition-colors font-medium drop-shadow-md">Services</a>
-          <a href="#web-design" className="text-white hover:text-primary transition-colors font-medium drop-shadow-md">Web Design</a>
-          <a href="#contact" className="text-white hover:text-primary transition-colors font-medium drop-shadow-md">Contact</a>
-          <Link href="/about" className="text-white hover:text-primary transition-colors font-medium drop-shadow-md">About Me</Link>
+          <a href="#work" className="text-[#D4AF37] hover:text-white transition-colors font-bold drop-shadow-md">Work</a>
+          <a href="#services" className="text-[#D4AF37] hover:text-white transition-colors font-bold drop-shadow-md">Services</a>
+          <a href="#web-design" className="text-[#D4AF37] hover:text-white transition-colors font-bold drop-shadow-md">Web Design</a>
+          <a href="#contact" className="text-[#D4AF37] hover:text-white transition-colors font-bold drop-shadow-md">Contact</a>
+          <Link href="/about" className="text-[#D4AF37] hover:text-white transition-colors font-bold drop-shadow-md">About Me</Link>
         </nav>
       </div>
       
@@ -60,35 +60,35 @@ const Header = () => {
         <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
           <a 
             href="#work" 
-            className="text-white hover:text-primary transition-colors py-2 font-medium"
+            className="text-[#D4AF37] hover:text-white transition-colors py-2 font-bold"
             onClick={() => setIsMenuOpen(false)}
           >
             Work
           </a>
           <a 
             href="#services" 
-            className="text-white hover:text-primary transition-colors py-2 font-medium"
+            className="text-[#D4AF37] hover:text-white transition-colors py-2 font-bold"
             onClick={() => setIsMenuOpen(false)}
           >
             Services
           </a>
           <a 
             href="#web-design" 
-            className="text-white hover:text-primary transition-colors py-2 font-medium"
+            className="text-[#D4AF37] hover:text-white transition-colors py-2 font-bold"
             onClick={() => setIsMenuOpen(false)}
           >
             Web Design
           </a>
           <a 
             href="#contact" 
-            className="text-white hover:text-primary transition-colors py-2 font-medium"
+            className="text-[#D4AF37] hover:text-white transition-colors py-2 font-bold"
             onClick={() => setIsMenuOpen(false)}
           >
             Contact
           </a>
           <Link 
             href="/about" 
-            className="text-white hover:text-primary transition-colors py-2 font-medium"
+            className="text-[#D4AF37] hover:text-white transition-colors py-2 font-bold"
             onClick={() => setIsMenuOpen(false)}
           >
             About Me
